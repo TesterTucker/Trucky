@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/spalsh">
+    <ProgressBar
+        android:id="@+id/pbLogin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/tvLoginHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="30dp"/>
+
+        <TextView
+            android:id="@+id/tvLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tvLoginHeading"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:text="Login"/>
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tvLogin"
+            android:background="@drawable/bg_inputtype"
+            android:layout_marginTop="20dp"
+            android:paddingVertical="8dp"
+            android:singleLine="true"
+            android:paddingStart="10dp"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:layout_marginHorizontal="30dp"/>
+
+        <TextView
+            android:id="@+id/tvPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/etEmail"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="30dp"
+            android:text="Password"
+            android:layout_marginTop="20dp"/>
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/tvPassword"
+            android:background="@drawable/bg_inputtype"
+            android:layout_marginTop="10dp"
+            android:paddingVertical="8dp"
+            android:paddingStart="10dp"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:singleLine="true"
+            android:layout_marginHorizontal="30dp"/>
+        <TextView
+            android:id="@+id/dont_have_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/etPassword"
+            app:layout_constraintStart_toStartOf="@+id/etPassword"
+            android:layout_marginTop="5dp"
+            android:text="Already have an account? Sign up"
+            />
+
+        <TextView
+            android:id="@+id/btnLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/dont_have_account"
+            android:layout_marginTop="30dp"
+            android:text="Submit"
+            android:background="@drawable/bg_submit"
+            android:paddingVertical="7dp"
+            android:paddingHorizontal="13sp"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintStart_toStartOf="@+id/etPassword"
+            app:layout_constraintEnd_toEndOf="@+id/etPassword"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

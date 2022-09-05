@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="ld_activityScreenTitles">
+        <item>Home</item>
+        <item>Create Bilty</item>
+        <item>Driver Details</item>
+        <item>Truck Details</item>
+        <item>Tyre Details</item>
+        <item>Clients Details</item>
+        <item>Performance Tracker</item>
+        <item>Reports</item>
+        <item>Growth Chart</item>
+        <item>Settings</item>
+        <item>Contact Us</item>
+        <item>Logout</item>
+    </string-array>
+
+    <array name="ld_activityScreenIcons">
+        <item>@drawable/ic_baseline_person_24</item>
+        <item>@drawable/ic_baseline_person_24</item>
+        <item>@drawable/ic_baseline_person_24</item>
+        <item>@drawable/ic_baseline_person_24</item>
+        <item>@drawable/ic_baseline_person_24</item>
+        <item>@drawable/ic_baseline_person_24</item>
+        <item>@drawable/ic_baseline_person_24</item>
+        <item>@drawable/ic_baseline_person_24</item>
+        <item>@drawable/ic_baseline_person_24</item>
+        <item>@drawable/ic_baseline_person_24</item>
+        <item>@drawable/ic_baseline_person_24</item>
+        <item>@drawable/ic_baseline_person_24</item>
+        <item>@drawable/ic_baseline_person_24</item>
+    </array>
+
+</resources>

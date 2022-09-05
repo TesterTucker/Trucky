@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C3C4D5"
+    tools:context=".ui.home.fragment.driver.DriverFragment">
+
+    <TextView
+        android:id="@+id/tvHeading_DriverDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="Driver Details"
+        android:textColor="#3F405A"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/subHeading_DriverDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:gravity="center_horizontal"
+        android:text="Ease the you manage your Trucks  "
+        android:textColor="#698296"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHeading_DriverDetail" />
+
+    <TextView
+        android:id="@+id/tvDriverName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="36dp"
+        android:text="Driver Name"
+        android:textSize="8sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subHeading_DriverDetail" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardDriverName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="230dp"
+        android:forceHasOverlappingRendering="true"
+        app:cardCornerRadius="10dp"
+        app:cardPreventCornerOverlap="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDriverName">
+
+        <EditText
+            android:id="@+id/etDriverName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:paddingVertical="10dp"
+            android:paddingStart="10dp"
+            android:singleLine="true"
+            android:textSize="8sp" />
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/tvDriverLicenseNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="22dp"
+        android:text="Driver License No"
+        android:textSize="8sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardDriverName" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardDriverLicenseNo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="230dp"
+        android:forceHasOverlappingRendering="true"
+        app:cardCornerRadius="10dp"
+        app:cardPreventCornerOverlap="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDriverLicenseNo">
+
+        <EditText
+            android:id="@+id/etDriverLicenseNo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:inputType="number"
+            android:paddingVertical="10dp"
+            android:paddingStart="10dp"
+            android:singleLine="true"
+            android:textSize="8sp" />
+    </androidx.cardview.widget.CardView>
+
+    <!--Driver number and Adhar card-->
+    <TextView
+        android:id="@+id/tvDriverPhoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="27dp"
+        android:text="Driver Phone No."
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDriverName"
+        app:layout_constraintStart_toEndOf="@+id/cardDriverName"
+        app:layout_constraintTop_toTopOf="@+id/tvDriverName" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardDriverPhoneNumbe"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="27dp"
+        android:forceHasOverlappingRendering="true"
+        app:cardCornerRadius="10dp"
+        app:cardPreventCornerOverlap="true"
+        app:layout_constraintBottom_toBottomOf="@+id/cardDriverName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvDriverPhoneNumber">
+
+        <EditText
+            android:id="@+id/etDriverPhoneNumbe"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+android:inputType="number"
+            android:paddingVertical="10dp"
+            android:paddingStart="10dp"
+            android:singleLine="true"
+            android:textSize="8sp" />
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/tvDriverAdharNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="27dp"
+        android:text="Driver Aadhaar No."
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDriverLicenseNo"
+        app:layout_constraintStart_toEndOf="@+id/cardDriverName"
+        app:layout_constraintTop_toTopOf="@+id/tvDriverLicenseNo" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardDriverPhoneNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="27dp"
+        android:forceHasOverlappingRendering="true"
+        app:cardCornerRadius="10dp"
+        app:cardPreventCornerOverlap="true"
+        app:layout_constraintBottom_toBottomOf="@+id/cardDriverLicenseNo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvDriverPhoneNumber">
+
+        <EditText
+            android:id="@+id/etDriverAadhaarNo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:inputType="number"
+            android:paddingVertical="10dp"
+            android:paddingStart="10dp"
+            android:singleLine="true"
+            android:textSize="8sp" />
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/tvDriverAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="24dp"
+        android:text="Driver Address"
+        android:textSize="8sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardDriverPhoneNumber" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardDriverAddress"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="27dp"
+        android:forceHasOverlappingRendering="true"
+        app:cardCornerRadius="10dp"
+        app:cardPreventCornerOverlap="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDriverAddress">
+
+        <EditText
+            android:id="@+id/etDriverAddress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:paddingVertical="10dp"
+            android:paddingStart="10dp"
+            android:layout_gravity="start"
+            android:textSize="8sp" />
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/tvDriverAadhaarcard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="18dp"
+        android:text="Driver Aadhaar card"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toStartOf="@+id/tvDriverLicense"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardDriverAddress" />
+
+    <TextView
+        android:id="@+id/tvDriverLicense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="27dp"
+        android:text="Driver License"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDriverAadhaarcard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvDriverAadhaarcard"
+        app:layout_constraintTop_toTopOf="@+id/tvDriverAadhaarcard" />
+
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/uplaodlicenseCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvDriverLicense"
+        app:layout_constraintStart_toStartOf="@+id/tvDriverLicense"
+        app:layout_constraintEnd_toEndOf="@+id/tvDriverLicense"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/uplaodlicense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Upload"
+                android:gravity="center_horizontal"
+android:layout_marginStart="5dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textSize="12sp"
+                app:layout_constraintTop_toTopOf="@+id/tvLicense"
+                app:layout_constraintBottom_toBottomOf="@+id/tvLicense"
+                app:layout_constraintStart_toEndOf="@+id/tvLicense"
+
+                />
+
+            <ImageView
+                android:id="@+id/tvLicense"
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/spalsh"
+                android:layout_marginBottom="5dp"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_uplaodAdharCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvDriverAadhaarcard"
+        app:layout_constraintStart_toStartOf="@+id/tvDriverAadhaarcard"
+        app:layout_constraintEnd_toEndOf="@+id/tvDriverAadhaarcard"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <TextView
+                android:id="@+id/tvuplaodAdharCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Upload"
+                android:gravity="center_horizontal"
+                app:layout_constraintTop_toTopOf="@+id/IvAdharCard"
+                app:layout_constraintBottom_toBottomOf="@+id/IvAdharCard"
+                app:layout_constraintStart_toEndOf="@+id/IvAdharCard"
+                android:layout_marginEnd="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textSize="12sp"
+
+
+                />
+
+            <ImageView
+                android:id="@+id/IvAdharCard"
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/spalsh"
+                android:layout_marginBottom="5dp"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/btn_saveDriverDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/uplaodlicenseCard"
+        android:text="Save"
+        android:background="@drawable/bg_save"
+        android:textColor="@color/white"
+        android:textSize="10dp"
+        android:layout_marginEnd="30dp"
+        android:paddingVertical="3dp"
+        android:paddingHorizontal="12sp"
+        android:layout_marginTop="20dp"
+       app:layout_constraintEnd_toEndOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

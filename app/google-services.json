@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1001999303695",
+    "project_id": "trucky-1a854",
+    "storage_bucket": "trucky-1a854.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1001999303695:android:9a8de485b6e13ec31d8f7a",
+        "android_client_info": {
+          "package_name": "com.frist.turkey"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1001999303695-115i3shl61bqdk24800ilr41iq06dmgl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.frist.turkey",
+            "certificate_hash": "719ffbdd02ccac72093bcdc5d52ae1b261d400ce"
+          }
+        },
+        {
+          "client_id": "1001999303695-abh196ton0a7q5pa010729i58l00o5nd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDv9TAio7EKAMNxUq86bl1RUNQRV_2TQIg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1001999303695-abh196ton0a7q5pa010729i58l00o5nd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

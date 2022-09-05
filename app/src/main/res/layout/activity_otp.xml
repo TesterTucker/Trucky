@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/spalsh">
+
+
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <EditText
+            android:id="@+id/etotp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="30dp"
+            android:hint="enter otp"
+            android:paddingVertical="8dp"
+            android:paddingStart="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/bg_inputtype"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginHorizontal="20dp"/>
+
+        <TextView
+            android:id="@+id/tvResendOtp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/etotp"
+            app:layout_constraintTop_toBottomOf="@+id/etotp"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:text="RESEND OTP"
+            android:textColor="@color/white"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="7dp"
+            />
+
+        <TextView
+            android:id="@+id/tvOtp_Btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/etotp"
+            app:layout_constraintEnd_toEndOf="@+id/etotp"
+            app:layout_constraintTop_toBottomOf="@+id/tvResendOtp"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:text="Submit OTP"
+            android:background="@drawable/bg_submit"
+            android:textColor="@color/white"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="7dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="20dp"
+            />
+
+        <!--<ProgressBar
+            android:id="@+id/progress_signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
