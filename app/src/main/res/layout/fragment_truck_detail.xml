@@ -237,7 +237,7 @@
             app:layout_constraintStart_toStartOf="@+id/tvDealerName"
             app:layout_constraintTop_toBottomOf="@+id/tvTruckPurchaseDate">
 
-            <EditText
+            <TextView
                 android:id="@+id/etTruckPurchaseDate"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -315,7 +315,7 @@
             app:layout_constraintStart_toStartOf="@+id/tvDealerName"
             app:layout_constraintTop_toBottomOf="@+id/tvInsuranceDate">
 
-            <EditText
+            <TextView
                 android:id="@+id/etInsuranceDate"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
