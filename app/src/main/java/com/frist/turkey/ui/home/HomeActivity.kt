@@ -15,7 +15,9 @@ import com.frist.turkey.R
 import com.frist.turkey.menu.DrawerAdapter
 import com.frist.turkey.menu.DrawerItem
 import com.frist.turkey.menu.SimpleItem
+import com.frist.turkey.ui.home.fragment.ClientDetailFragment.ClientDetailFragment
 import com.frist.turkey.ui.home.fragment.HomeFragment
+import com.frist.turkey.ui.home.fragment.TyreDetail.TyreDetailFragment
 import com.frist.turkey.ui.home.fragment.driver.DriverFragment
 import com.frist.turkey.ui.home.fragment.truckDetail.TruckDetailFragment
 import com.yarolegovich.slidingrootnav.SlidingRootNav
@@ -87,10 +89,12 @@ class HomeActivity : AppCompatActivity(), DrawerAdapter.OnItemSelectedListener {
                 slidingRootNav?.closeMenu()
             }
             POS_Tyre_Details->{
-
+                showFragment(TyreDetailFragment.createFor(screenTitles?.get(position)))
+                slidingRootNav?.closeMenu()
             }
             POS_Clients_Details->{
-
+                showFragment(ClientDetailFragment.createFor(screenTitles?.get(position)))
+                slidingRootNav?.closeMenu()
             }
             POS_Performance_Tracker->{
 

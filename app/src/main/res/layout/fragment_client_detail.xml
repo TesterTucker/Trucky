@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C3C4D5"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.home.fragment.ClientDetailFragment.ClientDetailFragment">
+
+    <TextView
+        android:id="@+id/tvHeading_ClientDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="Client Details"
+        android:textColor="#3F405A"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/subHeading_ClientDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:gravity="center_horizontal"
+        android:text="Ease the you manage your Trucks  "
+        android:textColor="#698296"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHeading_ClientDetails" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="205dp"
+        />
+
+
+
+    <TextView
+        android:id="@+id/tvClientName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:text="Client Name"
+        android:textSize="8sp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subHeading_ClientDetails" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardClientName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="10dp"
+        android:background="@color/white"
+        android:forceHasOverlappingRendering="true"
+        app:cardCornerRadius="4dp"
+        app:cardPreventCornerOverlap="true"
+        app:layout_constraintEnd_toEndOf="@id/guideline4"
+        app:layout_constraintStart_toStartOf="@+id/tvClientName"
+        app:layout_constraintTop_toBottomOf="@+id/tvClientName">
+
+        <EditText
+            android:id="@+id/etClientName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:textSize="8sp"
+            android:paddingVertical="10dp"
+            android:paddingStart="10dp"
+            android:singleLine="true"
+            />
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/tvClientDetail_phoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:text="Phone No"
+        android:textSize="8sp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardClientName" />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardClientDetail_phoneNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="10dp"
+        android:background="@color/white"
+        android:forceHasOverlappingRendering="true"
+        app:cardCornerRadius="4dp"
+        app:cardPreventCornerOverlap="true"
+        app:layout_constraintEnd_toEndOf="@id/guideline4"
+        app:layout_constraintStart_toStartOf="@+id/tvClientDetail_phoneNumber"
+        app:layout_constraintTop_toBottomOf="@+id/tvClientDetail_phoneNumber">
+
+        <EditText
+            android:id="@+id/etClientDetail_PhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:textSize="8sp"
+            android:inputType="number"
+            android:paddingVertical="10dp"
+            android:paddingStart="10dp"
+            android:singleLine="true"
+            />
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/tvClientDetailTypeOfClient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Type of Client"
+        android:textSize="8sp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintTop_toTopOf="@+id/tvClientName"
+        app:layout_constraintBottom_toBottomOf="@+id/tvClientName"
+        app:layout_constraintStart_toStartOf="@id/guideline4" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardClientDetailTypeOfClient"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="10dp"
+        android:background="@color/white"
+        android:forceHasOverlappingRendering="true"
+        app:cardCornerRadius="4dp"
+        app:cardPreventCornerOverlap="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvClientDetailTypeOfClient"
+        app:layout_constraintTop_toBottomOf="@+id/tvClientDetailTypeOfClient">
+
+        <EditText
+            android:id="@+id/etClientDetailTypeOfClient"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:paddingVertical="10dp"
+            android:paddingStart="10dp"
+            android:singleLine="true"
+            android:textSize="8sp" />
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/tvClientDetailCompanyName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Company Name"
+        android:textSize="8sp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintTop_toTopOf="@+id/tvClientDetail_phoneNumber"
+        app:layout_constraintBottom_toBottomOf="@+id/tvClientDetail_phoneNumber"
+        app:layout_constraintStart_toStartOf="@id/guideline4" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardClientDetailCompanyName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="10dp"
+        android:background="@color/white"
+        android:forceHasOverlappingRendering="true"
+        app:cardCornerRadius="4dp"
+        app:cardPreventCornerOverlap="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvClientDetailCompanyName"
+        app:layout_constraintTop_toBottomOf="@+id/tvClientDetailCompanyName">
+
+        <EditText
+            android:id="@+id/etClientDetailCompanyName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:paddingVertical="10dp"
+            android:paddingStart="10dp"
+            android:singleLine="true"
+            android:textSize="8sp" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvClientDetailDriverAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="24dp"
+        android:text="Driver Address"
+        android:textSize="8sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardClientDetail_phoneNumber" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardClientDetailDriverAddress"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="27dp"
+        android:forceHasOverlappingRendering="true"
+        app:cardCornerRadius="10dp"
+        app:cardPreventCornerOverlap="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvClientDetailDriverAddress">
+
+        <EditText
+            android:id="@+id/etClientDetailDriverAddress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:paddingVertical="10dp"
+            android:paddingStart="10dp"
+            android:layout_gravity="start"
+            android:textSize="8sp" />
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/tvClientDetailPhotoUpload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="24dp"
+        android:text="Photo upload"
+        android:textSize="8sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardClientDetailDriverAddress" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_ClientDetailPhotoUpload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/tvClientDetailPhotoUpload"
+        app:layout_constraintStart_toStartOf="@+id/tvClientDetailPhotoUpload"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <TextView
+                android:id="@+id/tvClientDetailPhotoUpload1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Upload"
+                android:gravity="center_horizontal"
+                app:layout_constraintTop_toTopOf="@+id/IvClientDetailUploadPic"
+                app:layout_constraintBottom_toBottomOf="@+id/IvClientDetailUploadPic"
+                app:layout_constraintStart_toEndOf="@+id/IvClientDetailUploadPic"
+                android:layout_marginEnd="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textSize="12sp"
+
+
+                />
+
+            <ImageView
+                android:id="@+id/IvClientDetailUploadPic"
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/spalsh"
+                android:layout_marginBottom="5dp"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/btn_saveClientDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/card_ClientDetailPhotoUpload"
+        android:text="Save"
+        android:background="@drawable/bg_save"
+        android:textColor="@color/white"
+        android:textSize="10dp"
+        android:layout_marginEnd="30dp"
+        android:paddingVertical="3dp"
+        android:paddingHorizontal="12sp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -44,7 +44,17 @@ class TruckDetailFragment : BaseFragment(), View.OnClickListener {
     override fun initControl() {
         btn_saveTruckDetail.setOnClickListener(this)
         cardTruckPurchaseDate.setOnClickListener(this)
+        etPurchaseDate.setOnClickListener(this)
+        etTruckPurchaseDate.setOnClickListener(this)
         etInsuranceDate.setOnClickListener(this)
+        etFitnessDate.setOnClickListener(this)
+        etFitness_Renewal_Date.setOnClickListener(this)
+        etTaxDate.setOnClickListener(this)
+        etTaxRenewalDate.setOnClickListener(this)
+        etPermitDate.setOnClickListener(this)
+        etPermit_Renewal_Date.setOnClickListener(this)
+
+
     }
     override fun onClick(p0: View?) {
        when(p0?.id){
@@ -54,15 +64,36 @@ class TruckDetailFragment : BaseFragment(), View.OnClickListener {
                }
            }
            R.id.cardTruckPurchaseDate->{
-               showDatePickerDialog()
+               showDatePickerDialog(0)
            }
-           R.id.etInsuranceDate->{
-               showDatePickerDialog()
+           R.id.etTruckPurchaseDate -> {
+               showDatePickerDialog(1)
+           }
+           R.id.etInsuranceDate -> {
+               showDatePickerDialog(2)
+           }
+           R.id.etFitnessDate -> {
+               showDatePickerDialog(3)
+           }
+           R.id.etFitness_Renewal_Date -> {
+               showDatePickerDialog(4)
+           }
+           R.id.etTaxDate -> {
+               showDatePickerDialog(5)
+           }
+           R.id.etTaxRenewalDate -> {
+               showDatePickerDialog(6)
+           }
+           R.id.etPermitDate -> {
+               showDatePickerDialog(7)
+           }
+           R.id.etPermit_Renewal_Date -> {
+               showDatePickerDialog(7)
+           }
 
-           }
        }
     }
-    private fun showDatePickerDialog() {
+    private fun showDatePickerDialog(type:Int) {
         val cal = Calendar.getInstance()
         val d = cal.get(Calendar.DAY_OF_MONTH)
         val m = cal.get(Calendar.MONTH)
@@ -72,8 +103,37 @@ class TruckDetailFragment : BaseFragment(), View.OnClickListener {
                 val dayStr = if (dayofMonth < 10) "0${dayofMonth}" else "${dayofMonth}"
                 val mon = month + 1
                 val monthStr = if (mon < 10) "0${mon}" else "${mon}"
-                etTruckPurchaseDate.text = "${dayStr}-${monthStr}-${year}"
+                when(type) {
+                    0 -> {
+                        etPurchaseDate.text = "${dayStr}-${monthStr}-${year}"
+                    }
+                    1 -> {
+                        etTruckPurchaseDate.text = "${dayStr}-${monthStr}-${year}"
+                    }
+                    2 -> {
+                        etInsuranceDate.text = "${dayStr}-${monthStr}-${year}"
+                    }
+                    3 -> {
+                        etFitnessDate.text = "${dayStr}-${monthStr}-${year}"
+                    }
+                    4 -> {
+                        etFitness_Renewal_Date.text = "${dayStr}-${monthStr}-${year}"
+                    }
+                    5 -> {
+                        etTaxDate.text = "${dayStr}-${monthStr}-${year}"
+                    }
 
+                    6 -> {
+                        etTaxRenewalDate.text = "${dayStr}-${monthStr}-${year}"
+                    }
+                    7 -> {
+                        etPermitDate.text = "${dayStr}-${monthStr}-${year}"
+                    }
+                    8 -> {
+                        etPermit_Renewal_Date.text = "${dayStr}-${monthStr}-${year}"
+                    }
+
+                }
             }
         })
     }

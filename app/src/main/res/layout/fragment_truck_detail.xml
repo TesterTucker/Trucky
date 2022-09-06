@@ -473,7 +473,7 @@
             app:layout_constraintStart_toStartOf="@+id/tvFitnessDate"
             app:layout_constraintTop_toBottomOf="@+id/tvFitnessDate">
 
-            <EditText
+            <TextView
                 android:id="@+id/etFitnessDate"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -507,7 +507,7 @@
             app:layout_constraintStart_toStartOf="@+id/tvRenewal_Date"
             app:layout_constraintTop_toBottomOf="@+id/tvRenewal_Date">
 
-            <EditText
+            <TextView
                 android:id="@+id/etFitness_Renewal_Date"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -631,7 +631,7 @@
             app:layout_constraintStart_toStartOf="@+id/tvTaxDate"
             app:layout_constraintTop_toBottomOf="@+id/tvTaxDate">
 
-            <EditText
+            <TextView
                 android:id="@+id/etTaxDate"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -664,7 +664,7 @@
             app:layout_constraintStart_toStartOf="@+id/tvTaxRenewalDate"
             app:layout_constraintTop_toBottomOf="@+id/tvTaxRenewalDate">
 
-            <EditText
+            <TextView
                 android:id="@+id/etTaxRenewalDate"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -787,7 +787,7 @@
             app:layout_constraintStart_toStartOf="@+id/tvPermitDate"
             app:layout_constraintTop_toBottomOf="@+id/tvPermitDate">
 
-            <EditText
+            <TextView
                 android:id="@+id/etPermitDate"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -820,7 +820,7 @@
             app:layout_constraintStart_toStartOf="@+id/tvPermitRenewalDate"
             app:layout_constraintTop_toBottomOf="@+id/tvPermitRenewalDate">
 
-            <EditText
+            <TextView
                 android:id="@+id/etPermit_Renewal_Date"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -1069,7 +1069,7 @@
             app:layout_constraintStart_toStartOf="@+id/tvPurchaseDate"
             app:layout_constraintTop_toBottomOf="@+id/tvDealerName">
 
-            <EditText
+            <TextView
                 android:id="@+id/etPurchaseDate"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

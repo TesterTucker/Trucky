@@ -13,11 +13,13 @@ import android.widget.Toast
 import com.frist.turkey.R
 import com.frist.turkey.base.BaseFragment
 import com.frist.turkey.model.Driver
+import com.frist.turkey.ui.home.HomeActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
+import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.fragment_driver.*
 
 
@@ -79,6 +81,7 @@ class DriverFragment : BaseFragment(), View.OnClickListener {
         when(p0?.id){
             R.id.btn_saveDriverDetail->{
                 sendDriverDataToFirebase()
+                (activity as HomeActivity).pbHome.visibility=View.VISIBLE
             }
             R.id.uplaodlicense->{
                 val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
@@ -96,6 +99,7 @@ class DriverFragment : BaseFragment(), View.OnClickListener {
 
 
     private fun sendDriverDataToFirebase() {
+
         Toast.makeText(context, "Driver Name Set on Database cliked", Toast.LENGTH_SHORT).show()
         val driverName=etDriverName.text.toString().trim()
         val driverPhoneNumbe=etDriverPhoneNumbe.text.toString().trim()
@@ -106,13 +110,16 @@ class DriverFragment : BaseFragment(), View.OnClickListener {
         val driver=Driver(driverName,driverPhoneNumbe,driverLicenseNo,driverAadhaarNo,driverAddress)
 
         if (driverValidation()){
+
             if (curentUser !=null){
                 databaseReference.child(curentUser!!).child("DriverDetail").push().setValue(driver).addOnCompleteListener {
                     if (it.isSuccessful){
                         Toast.makeText(context, "Driver Name Set on Database", Toast.LENGTH_SHORT).show()
+                        (activity as HomeActivity).pbHome.visibility=View.GONE
                         sendDriverImageToFirebase()
 
                     }else{
+                        (activity as HomeActivity).pbHome.visibility=View.GONE
                         Toast.makeText(context, "failed", Toast.LENGTH_SHORT).show()
 
                     }
