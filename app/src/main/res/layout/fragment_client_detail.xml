@@ -141,7 +141,7 @@
         app:layout_constraintStart_toStartOf="@+id/tvClientDetailTypeOfClient"
         app:layout_constraintTop_toBottomOf="@+id/tvClientDetailTypeOfClient">
 
-        <EditText
+        <TextView
             android:id="@+id/etClientDetailTypeOfClient"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -281,19 +281,176 @@
                 />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
+
     <TextView
-        android:id="@+id/btn_saveClientDetail"
+        android:id="@+id/tvAccountDetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/card_ClientDetailPhotoUpload"
-        android:text="Save"
-        android:background="@drawable/bg_save"
-        android:textColor="@color/white"
-        android:textSize="10dp"
-        android:layout_marginEnd="30dp"
-        android:paddingVertical="3dp"
-        android:paddingHorizontal="12sp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="46dp"
+        android:text="Account Details"
+        android:textColor="#0F006A"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_ClientDetailPhotoUpload" />
+
+    <TextView
+        android:id="@+id/tvBankName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:text="Client Name"
+        android:textSize="8sp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAccountDetails" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardBankName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="10dp"
+        android:background="@color/white"
+        android:forceHasOverlappingRendering="true"
+        app:cardCornerRadius="4dp"
+        app:cardPreventCornerOverlap="true"
+        app:layout_constraintEnd_toEndOf="@id/guideline4"
+        app:layout_constraintStart_toStartOf="@+id/tvBankName"
+        app:layout_constraintTop_toBottomOf="@+id/tvBankName">
+
+        <EditText
+            android:id="@+id/etBankName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:textSize="8sp"
+            android:paddingVertical="10dp"
+            android:paddingStart="10dp"
+            android:singleLine="true"
+            />
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/tvAccountNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:text="Account Number"
+        android:textSize="8sp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardBankName" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardAccountNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@color/white"
+        android:forceHasOverlappingRendering="true"
+        app:cardCornerRadius="4dp"
+        app:cardPreventCornerOverlap="true"
+        app:layout_constraintEnd_toEndOf="@id/guideline4"
+        app:layout_constraintStart_toStartOf="@+id/tvAccountNumber"
+        app:layout_constraintTop_toBottomOf="@+id/tvAccountNumber">
+
+        <EditText
+            android:id="@+id/etAccountNumber"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:textSize="8sp"
+            android:paddingVertical="10dp"
+            android:paddingStart="10dp"
+            android:singleLine="true"
+            />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvBankBranch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Branch"
+        android:textSize="8sp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintTop_toTopOf="@+id/tvBankName"
+        app:layout_constraintBottom_toBottomOf="@+id/tvBankName"
+        app:layout_constraintStart_toStartOf="@id/guideline4" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardBankBranch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="10dp"
+        android:background="@color/white"
+        android:forceHasOverlappingRendering="true"
+        app:cardCornerRadius="4dp"
+        app:cardPreventCornerOverlap="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvBankBranch"
+        app:layout_constraintTop_toBottomOf="@+id/tvBankBranch">
+
+        <EditText
+            android:id="@+id/etBankBranch"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:paddingVertical="10dp"
+            android:paddingStart="10dp"
+            android:singleLine="true"
+            android:textSize="8sp" />
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:id="@+id/tvIFSCCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="IFSC Code"
+        android:textSize="8sp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintTop_toTopOf="@+id/tvAccountNumber"
+        app:layout_constraintBottom_toBottomOf="@+id/tvAccountNumber"
+        app:layout_constraintStart_toStartOf="@id/guideline4" />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardIFSCCode"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="10dp"
+        android:background="@color/white"
+        android:forceHasOverlappingRendering="true"
+        app:cardCornerRadius="4dp"
+        app:cardPreventCornerOverlap="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvIFSCCode"
+        app:layout_constraintTop_toBottomOf="@+id/tvIFSCCode">
+
+        <EditText
+            android:id="@+id/etIFSCCode"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:paddingVertical="10dp"
+            android:paddingStart="10dp"
+            android:singleLine="true"
+            android:textSize="8sp" />
+    </androidx.cardview.widget.CardView>
+
+
+     <TextView
+         android:id="@+id/btn_saveClientDetail"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         app:layout_constraintTop_toBottomOf="@+id/cardIFSCCode"
+         android:text="Save"
+         android:background="@drawable/bg_save"
+         android:textColor="@color/white"
+         android:textSize="10dp"
+         android:layout_marginEnd="30dp"
+         android:paddingVertical="3dp"
+         android:paddingHorizontal="12sp"
+         android:layout_marginTop="20dp"
+         app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
