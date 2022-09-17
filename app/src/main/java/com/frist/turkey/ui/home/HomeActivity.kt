@@ -82,8 +82,7 @@ class HomeActivity : AppCompatActivity(), DrawerAdapter.OnItemSelectedListener {
                // showFragment(TruckDetailFragment.createFor(screenTitles?.get(position)))
             }
             POSDriver_Details->{
-                /*showFragment(DriverFragment.createFor(screenTitles?.get(position)))
-                slidingRootNav?.closeMenu()*/
+
                 showFragment(SearchDriverDetailFragment.createFor(screenTitles?.get(position)))
                 slidingRootNav?.closeMenu()
             }
@@ -136,10 +135,10 @@ class HomeActivity : AppCompatActivity(), DrawerAdapter.OnItemSelectedListener {
 
     private fun createItemFor(position: Int): DrawerItem<*> {
         return SimpleItem(screenIcons?.get(position)!!, screenTitles?.get(position) ?: "0")
-            .withIconTint(color(R.color.textColorSecondary))
-            .withTextTint(color(R.color.textColorPrimary))
-            .withSelectedIconTint(color(R.color.colorAccent))
-            .withSelectedTextTint(color(R.color.colorAccent))
+            .withIconTint(color(R.color.white))
+            .withTextTint(color(R.color.white))
+            .withSelectedIconTint(color(R.color.white))
+            .withSelectedTextTint(color(R.color.white))
     }
 
     private fun loadScreenTitles(): Array<String> {
@@ -148,11 +147,13 @@ class HomeActivity : AppCompatActivity(), DrawerAdapter.OnItemSelectedListener {
 
     private fun loadScreenIcons(): Array<Drawable?> {
         val ta = resources.obtainTypedArray(R.array.ld_activityScreenIcons)
+
         val icons = arrayOfNulls<Drawable>(ta.length())
         for (i in 0 until ta.length()) {
             val id = ta.getResourceId(i, 0)
             if (id != 0) {
                 icons[i] = ContextCompat.getDrawable(this, id)
+
             }
         }
         ta.recycle()

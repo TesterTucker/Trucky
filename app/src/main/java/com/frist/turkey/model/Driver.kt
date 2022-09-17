@@ -15,6 +15,7 @@ data class Driver(
     var timeStamp: @RawValue Any? = null,
 ) : Parcelable
 
+@Parcelize
 data class TruckDetail(
     var driverName: String? = null,
     var truckBrand: String? = null,
@@ -49,11 +50,29 @@ data class TruckDetail(
     var PermitRenwalDay: String? = null,
     var PermitRenwalMonth: String? = null,
     var truckDetailsId: String? = null,
+    var timeStamp: @RawValue Any? = null,
+    var truckModel:String?=null
 
-    )
+    ): Parcelable
 
 data class TyreDetail(
     var tyreTruckNumber: String? = null,
     var tyreBrand: String? = null,
     var NoOfTyre: String? = null,
 )
+
+
+@Parcelize
+data class ClientDetail(
+    var clientName:String?=null,
+    var typefClient:String?=null,
+    var ClientMobileNumber:String?=null,
+    var ClientCompany:String?=null,
+    var ClientAddress:String?=null,
+    var clientDetailsId:String?=null,
+    var timeStamp: @RawValue Any? = null,
+    var clientNameBank:String?=null,
+    var branchName:String?=null,
+    var accountNumber:String?=null,
+    var ifscCode:String?=null
+):Parcelable

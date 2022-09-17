@@ -18,17 +18,22 @@ import com.frist.turkey.model.Driver
 import com.frist.turkey.model.TruckDetail
 import com.frist.turkey.ui.home.HomeActivity
 import com.frist.turkey.ui.home.fragment.HomeFragment
+import com.frist.turkey.ui.home.fragment.driver.DriverActivity
 import com.frist.turkey.utils.DatePickerHelper
+import com.frist.turkey.utils.statusBarTransparent
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.firebase.database.core.Context
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.fragment_truck_detail.*
+import kotlinx.android.synthetic.main.sort_bottom_sheet_dialog.*
 import java.util.*
 
 class TruckDetailFragment : BaseFragment() {
     var truckDetailList:ArrayList<TruckDetail>?= arrayListOf()
     lateinit var databaseReference: DatabaseReference
+    var bottomSheetDialog: BottomSheetDialog? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,17 +44,20 @@ class TruckDetailFragment : BaseFragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        statusBarTransparent()
         initViews()
         initControl()
-        btnAddTruckDetail.setOnClickListener {
-            startActivity(Intent(requireContext(),SearchDetailActivity::class.java))
-        }
+
 
     }
     override fun initViews() {
         databaseReference=FirebaseDatabase.getInstance().reference
-        databaseReference.child("Truck Detail").addChildEventListener(childEventListener)
-
+        SortTruckDetail.setOnClickListener {
+            openBottomSheet()
+        }
+        btnAddTruckDetail.setOnClickListener {
+            startActivity(Intent(requireContext(),SearchDetailActivity::class.java))
+        }
         etSearchDriver.addTextChangedListener(object :TextWatcher{
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
@@ -119,13 +127,56 @@ class TruckDetailFragment : BaseFragment() {
                 TruckDetail(
                     driverName = data?.driverName,
                     truckBrand = data?.truckBrand,
+                    truckRate = data?.truckRate,
+                    DelearPurchaseDate = data?.DelearPurchaseDate,
+                    truckNumber = data?.truckNumber,
+                    truckPurchaseDate = data?.truckPurchaseDate,
+                    truckChaiseNumber = data?.truckChaiseNumber,
+                    truckNoOfTyre = data?.truckNoOfTyre,
+                    InsurenceCompanyName = data?.InsurenceCompanyName,
+                    InsurenceDate = data?.InsurenceDate,
+                    InsurenceRenewalDate = data?.InsurenceRenewalDate,
+                    InsurenceRenewalDay = data?.InsurenceRenewalDay,
+                    InsurenceRenewalMonth = data?.InsurenceRenewalMonth,
+                    InsurenceNo = data?.InsurenceNo,
+                    FitnessCompanyName = data?.FitnessCompanyName,
+                    FitnessDate = data?.FitnessDate,
+                    FitnessRenewalDate = data?.FitnessRenewalDate,
+                    FitnessNumber = data?.FitnessNumber,
+                    FitnessRenewalDays = data?.FitnessRenewalDays,
+                    FitnessRenewalMonth = data?.FitnessRenewalMonth,
+                    TaxCompanyName = data?.TaxCompanyName,
+                    TaxDate = data?.TaxDate,
+                    TaxRenewalDate = data?.TaxRenewalDate,
+                    TaxNumber = data?.TaxNumber,
+                    TaxDay = data?.TaxDay,
+                    TaxMonth = data?.TaxMonth,
+                    PermitCompanyname = data?.PermitCompanyname,
+                    PermitDate = data?.PermitDate,
+                    PermitRenwalDate = data?.PermitRenwalDate,
+                    PermitNumber = data?.PermitNumber,
+                    PermitRenwalDay = data?.PermitRenwalDay,
+                    PermitRenwalMonth = data?.PermitRenwalMonth,
+                    truckDetailsId = data?.truckDetailsId,
+                    timeStamp = data?.timeStamp,
+                    truckModel = data?.truckModel,
+
 
                 ))
             Log.e("fireBase", "onChildMoved${data}")
 
             rvTruckDetail.adapter= truckDetailList?.let {
                 TruckDetailAdapter(requireContext(),
-                    it
+                    it,
+                    object :TruckDetailAdapter.EditTruckDetail{
+                        override fun onClickEditTruck(TruckModel: TruckDetail) {
+                            startActivity(
+                                Intent(requireContext(), SearchDetailActivity::class.java)
+                                    .putExtra("isEditFromTruck", TruckModel)
+                            )
+                        }
+
+                    }
                 )
             }
 
@@ -135,6 +186,32 @@ class TruckDetailFragment : BaseFragment() {
         override fun onChildRemoved(p0: DataSnapshot) {
 
         }
+    }
+    private fun openBottomSheet() {
+
+        bottomSheetDialog = BottomSheetDialog(requireContext(), R.style.AppBottomSheetDialogTheme)
+        bottomSheetDialog?.setContentView(R.layout.sort_bottom_sheet_dialog)
+        bottomSheetDialog?.A_ZSort?.setOnClickListener {
+            truckDetailList?.sortBy { it.driverName }//a-z
+            (rvTruckDetail?.adapter as TruckDetailAdapter)?.notifyDataSetChanged()
+            bottomSheetDialog?.dismiss()
+        }
+        bottomSheetDialog?.Z_ASort?.setOnClickListener {
+            truckDetailList?.sortByDescending  { it.driverName }//a-z
+            (rvTruckDetail?.adapter as TruckDetailAdapter)?.notifyDataSetChanged()
+            bottomSheetDialog?.dismiss()
+        }
+        bottomSheetDialog?.New_OldSort?.setOnClickListener {
+            truckDetailList?.sortBy { (it.timeStamp as Long) }//new
+            (rvTruckDetail?.adapter as TruckDetailAdapter)?.notifyDataSetChanged()
+            bottomSheetDialog?.dismiss()
+        }
+        bottomSheetDialog?.Old_NewSort?.setOnClickListener {
+            truckDetailList?.sortByDescending { (it.timeStamp as Long) }//old
+            (rvTruckDetail?.adapter as TruckDetailAdapter)?.notifyDataSetChanged()
+            bottomSheetDialog?.dismiss()
+        }
+        bottomSheetDialog?.show()
     }
 
     companion object {
@@ -151,6 +228,11 @@ class TruckDetailFragment : BaseFragment() {
         super.onCreate(savedInstanceState)
     }
 
+    override fun onResume() {
+        super.onResume()
+        truckDetailList?.clear()
+        databaseReference.child("Truck Detail").addChildEventListener(childEventListener)
+    }
 
 
 }

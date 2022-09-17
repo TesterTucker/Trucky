@@ -19,6 +19,9 @@
         android:theme="@style/Theme.Turkey"
         tools:targetApi="31">
         <activity
+            android:name=".ui.home.fragment.ClientDetailFragment.AddClientActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.home.fragment.truckDetail.SearchDetailActivity"
             android:exported="false" />
         <activity

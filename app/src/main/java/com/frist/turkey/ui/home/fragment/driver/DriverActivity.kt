@@ -38,8 +38,9 @@ class DriverActivity : BaseActivity(), View.OnClickListener {
     }
 
     override fun initViews() {
-        auth = FirebaseAuth.getInstance()
+
         databaseReference = FirebaseDatabase.getInstance().reference
+        auth = FirebaseAuth.getInstance()
         curentUser = auth.uid
         sharedPreferences.currentUser = auth.uid.toString()
         driverModel?.let {
@@ -60,6 +61,7 @@ class DriverActivity : BaseActivity(), View.OnClickListener {
     override fun onClick(p0: View?) {
         when (p0?.id) {
             R.id.btn_saveDriverDetail -> {
+                pbDriverDetail.visibility=View.VISIBLE
                 sendDriverDataToFirebase(driverModel)
             }
             R.id.uplaodlicense -> {
@@ -101,7 +103,9 @@ class DriverActivity : BaseActivity(), View.OnClickListener {
         val driverLicenseNo = etDriverLicenseNo.text.toString().trim()
         val driverAadhaarNo = etDriverAadhaarNo.text.toString().trim()
         val driverAddress = etDriverAddress.text.toString().trim()
+
         driverDetailsId = isEditDriver?.driverDetailsId ?: databaseReference.child("DriverDetail").push().key.toString()
+     //   driverDetailsId = isEditDriver?.driverDetailsId ?: databaseReference.child("DriverDetail").push().key.toString()
         val driver =
             Driver(
                 driverName,
@@ -117,11 +121,14 @@ class DriverActivity : BaseActivity(), View.OnClickListener {
                 databaseReference.child("DriverDetail").child(driverDetailsId).setValue(driver)
                     .addOnCompleteListener {
                         if (it.isSuccessful) {
+                            pbDriverDetail.visibility=View.GONE
                             Toast.makeText(
                                 this,
                                 "Driver Name Set on Database",
                                 Toast.LENGTH_SHORT
                             ).show()
+                            clearDate()
+                            onBackPressed()
                             ImageUri?.let { it1 ->
                                 sendDriverImageToFirebase(
                                     imageUri = it1,
@@ -133,15 +140,24 @@ class DriverActivity : BaseActivity(), View.OnClickListener {
                                     imageUri = it1,
                                     imageName = "Aadhaar Card"
                                 )
+
                             }
                         } else {
-
+                            pbDriverDetail.visibility=View.GONE
                             Toast.makeText(this, "failed", Toast.LENGTH_SHORT).show()
 
                         }
                     }
             }
         }
+    }
+
+    private fun clearDate() {
+        etDriverName.setText("")
+        etDriverPhoneNumbe.setText("")
+        etDriverLicenseNo.setText("")
+        etDriverAadhaarNo.setText("")
+        etDriverAddress.setText("")
     }
 
     private fun sendDriverImageToFirebase(imageUri: Uri, imageName: String) {
@@ -156,13 +172,17 @@ class DriverActivity : BaseActivity(), View.OnClickListener {
             .addOnSuccessListener { // Image uploaded successfully
                 // Dismiss dialog
                 progressDialog.dismiss()
+/*
                 Toast
                     .makeText(
                         this,
-                        "Data send to firebase" /*"Image Uploaded!!"*/,
+                        "Data send to firebase" */
+/*"Image Uploaded!!"*//*
+,
                         Toast.LENGTH_SHORT
                     )
                     .show()
+*/
             }
             .addOnFailureListener { e -> // Error, Image not uploaded
                 progressDialog.dismiss()

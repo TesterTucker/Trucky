@@ -12,6 +12,7 @@ import com.frist.turkey.base.BaseFragment
 import com.frist.turkey.model.Driver
 import com.frist.turkey.model.TyreDetail
 import com.frist.turkey.ui.home.HomeActivity
+import com.frist.turkey.utils.statusBarTransparent
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -39,6 +40,7 @@ class TyreDetailFragment : BaseFragment(), View.OnClickListener {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        statusBarTransparent()
         initViews()
         initControl()
     }

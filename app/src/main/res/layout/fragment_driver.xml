@@ -7,6 +7,17 @@
     android:background="#C3C4D5"
     tools:context=".ui.home.fragment.driver.DriverActivity">
 
+    <ProgressBar
+        android:id="@+id/pbDriverDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/tvHeading_DriverDetail"
         android:layout_width="match_parent"
@@ -40,7 +51,7 @@
         android:layout_marginStart="27dp"
         android:layout_marginTop="36dp"
         android:text="Driver Name"
-        android:textSize="8sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/subHeading_DriverDetail" />
 
@@ -62,10 +73,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@null"
+            android:hint="Driver Name"
             android:paddingVertical="10dp"
             android:paddingStart="10dp"
             android:singleLine="true"
-            android:textSize="8sp" />
+            android:textSize="15sp" />
     </androidx.cardview.widget.CardView>
 
 
@@ -76,7 +88,7 @@
         android:layout_marginStart="27dp"
         android:layout_marginTop="22dp"
         android:text="Driver License No"
-        android:textSize="8sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardDriverName" />
 
@@ -98,11 +110,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@null"
+            android:hint="License No"
             android:inputType="number"
             android:paddingVertical="10dp"
             android:paddingStart="10dp"
             android:singleLine="true"
-            android:textSize="8sp" />
+            android:textSize="15sp" />
     </androidx.cardview.widget.CardView>
 
     <!--Driver number and Adhar card-->
@@ -112,7 +125,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="27dp"
         android:text="Driver Phone No."
-        android:textSize="8sp"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/tvDriverName"
         app:layout_constraintStart_toEndOf="@+id/cardDriverName"
         app:layout_constraintTop_toTopOf="@+id/tvDriverName" />
@@ -134,11 +147,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@null"
-android:inputType="number"
+            android:hint="Phone Number"
+            android:inputType="number"
             android:paddingVertical="10dp"
             android:paddingStart="10dp"
             android:singleLine="true"
-            android:textSize="8sp" />
+            android:textSize="15sp" />
     </androidx.cardview.widget.CardView>
 
 
@@ -148,7 +162,7 @@ android:inputType="number"
         android:layout_height="wrap_content"
         android:layout_marginStart="27dp"
         android:text="Driver Aadhaar No."
-        android:textSize="8sp"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/tvDriverLicenseNo"
         app:layout_constraintStart_toEndOf="@+id/cardDriverName"
         app:layout_constraintTop_toTopOf="@+id/tvDriverLicenseNo" />
@@ -170,11 +184,12 @@ android:inputType="number"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@null"
+            android:hint="Adhar No"
             android:inputType="number"
             android:paddingVertical="10dp"
             android:paddingStart="10dp"
             android:singleLine="true"
-            android:textSize="8sp" />
+            android:textSize="15sp" />
     </androidx.cardview.widget.CardView>
 
 
@@ -185,7 +200,7 @@ android:inputType="number"
         android:layout_marginStart="27dp"
         android:layout_marginTop="24dp"
         android:text="Driver Address"
-        android:textSize="8sp"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardDriverPhoneNumber" />
 
@@ -207,10 +222,11 @@ android:inputType="number"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@null"
+            android:gravity="top"
+            android:hint="Address"
             android:paddingVertical="10dp"
             android:paddingStart="10dp"
-            android:layout_gravity="start"
-            android:textSize="8sp" />
+            android:textSize="15sp" />
     </androidx.cardview.widget.CardView>
 
 
@@ -221,7 +237,7 @@ android:inputType="number"
         android:layout_marginStart="27dp"
         android:layout_marginTop="18dp"
         android:text="Driver Aadhaar card"
-        android:textSize="8sp"
+        android:textSize="12sp"
         app:layout_constraintEnd_toStartOf="@+id/tvDriverLicense"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -233,14 +249,12 @@ android:inputType="number"
         android:layout_height="wrap_content"
         android:layout_marginStart="27dp"
         android:text="Driver License"
-        android:textSize="8sp"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/tvDriverAadhaarcard"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/tvDriverAadhaarcard"
         app:layout_constraintTop_toTopOf="@+id/tvDriverAadhaarcard" />
-
-
 
 
     <androidx.cardview.widget.CardView
@@ -249,26 +263,27 @@ android:inputType="number"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         app:cardCornerRadius="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/tvDriverLicense"
-        app:layout_constraintStart_toStartOf="@+id/tvDriverLicense"
         app:layout_constraintEnd_toEndOf="@+id/tvDriverLicense"
-        >
+        app:layout_constraintStart_toStartOf="@+id/tvDriverLicense"
+        app:layout_constraintTop_toBottomOf="@+id/tvDriverLicense">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <TextView
                 android:id="@+id/uplaodlicense"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Upload"
-                android:gravity="center_horizontal"
-android:layout_marginStart="5dp"
+                android:layout_marginStart="5dp"
                 android:layout_marginEnd="10dp"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:gravity="center_horizontal"
+                android:text="Upload"
                 android:textSize="12sp"
-                app:layout_constraintTop_toTopOf="@+id/tvLicense"
                 app:layout_constraintBottom_toBottomOf="@+id/tvLicense"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/tvLicense"
+                app:layout_constraintTop_toTopOf="@+id/tvLicense"
 
                 />
 
@@ -277,13 +292,12 @@ android:layout_marginStart="5dp"
                 android:layout_width="19dp"
                 android:layout_height="19dp"
                 android:layout_marginStart="10dp"
-                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/spalsh"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="5dp"
-                android:src="@drawable/spalsh"
-                android:layout_marginBottom="5dp"
-                />
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -295,26 +309,27 @@ android:layout_marginStart="5dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         app:cardCornerRadius="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/tvDriverAadhaarcard"
-        app:layout_constraintStart_toStartOf="@+id/tvDriverAadhaarcard"
         app:layout_constraintEnd_toEndOf="@+id/tvDriverAadhaarcard"
-        >
+        app:layout_constraintStart_toStartOf="@+id/tvDriverAadhaarcard"
+        app:layout_constraintTop_toBottomOf="@+id/tvDriverAadhaarcard">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
+            android:layout_height="match_parent">
+
             <TextView
                 android:id="@+id/tvuplaodAdharCard"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Upload"
-                android:gravity="center_horizontal"
-                app:layout_constraintTop_toTopOf="@+id/IvAdharCard"
-                app:layout_constraintBottom_toBottomOf="@+id/IvAdharCard"
-                app:layout_constraintStart_toEndOf="@+id/IvAdharCard"
                 android:layout_marginEnd="12sp"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:gravity="center_horizontal"
+                android:text="Upload"
+                android:layout_marginStart="5dp"
                 android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/IvAdharCard"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/IvAdharCard"
+                app:layout_constraintTop_toTopOf="@+id/IvAdharCard"
 
 
                 />
@@ -324,13 +339,12 @@ android:layout_marginStart="5dp"
                 android:layout_width="19dp"
                 android:layout_height="19dp"
                 android:layout_marginStart="10dp"
-                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:src="@drawable/spalsh"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="5dp"
-                android:src="@drawable/spalsh"
-                android:layout_marginBottom="5dp"
-                />
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -340,14 +354,14 @@ android:layout_marginStart="5dp"
         android:id="@+id/btn_saveDriverDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/uplaodlicenseCard"
-        android:text="Save"
-        android:background="@drawable/bg_save"
-        android:textColor="@color/white"
-        android:textSize="10dp"
-        android:layout_marginEnd="30dp"
-        android:paddingVertical="3dp"
-        android:paddingHorizontal="12sp"
         android:layout_marginTop="20dp"
-       app:layout_constraintEnd_toEndOf="parent"/>
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/bg_save"
+        android:paddingHorizontal="15sp"
+        android:paddingVertical="3dp"
+        android:text="Save"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/uplaodlicenseCard" />
 </androidx.constraintlayout.widget.ConstraintLayout>

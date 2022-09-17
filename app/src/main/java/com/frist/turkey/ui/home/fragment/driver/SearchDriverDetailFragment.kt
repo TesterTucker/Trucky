@@ -15,6 +15,7 @@ import com.frist.turkey.base.BaseFragment
 import com.frist.turkey.model.Driver
 import com.frist.turkey.model.TyreDetail
 import com.frist.turkey.ui.home.fragment.TyreDetail.TyreDetailFragment
+import com.frist.turkey.utils.statusBarTransparent
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.fragment_search_driver_detail.*
@@ -22,9 +23,10 @@ import kotlinx.android.synthetic.main.sort_bottom_sheet_dialog.*
 
 
 class SearchDriverDetailFragment : BaseFragment(), View.OnClickListener {
+
     lateinit var databaseReference: DatabaseReference
     var driverList: ArrayList<Driver> = arrayListOf()
-
+    var bottomSheetDialog: BottomSheetDialog? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -39,6 +41,7 @@ class SearchDriverDetailFragment : BaseFragment(), View.OnClickListener {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        statusBarTransparent()
         initViews()
         initControl()
     }
@@ -116,11 +119,30 @@ class SearchDriverDetailFragment : BaseFragment(), View.OnClickListener {
     }
 
     private fun openBottomSheet() {
-        val dialog = BottomSheetDialog(requireContext())
-        val view = layoutInflater.inflate(R.layout.sort_bottom_sheet_dialog, null)
-        dialog.setCancelable(false)
-        dialog.setContentView(view)
-        dialog.show()
+
+        bottomSheetDialog = BottomSheetDialog(requireContext(), R.style.AppBottomSheetDialogTheme)
+        bottomSheetDialog?.setContentView(R.layout.sort_bottom_sheet_dialog)
+        bottomSheetDialog?.A_ZSort?.setOnClickListener {
+            driverList.sortBy { it.driverName }//a-z
+            (rvDriverDetail?.adapter as SearchDriverDetailAdapter)?.notifyDataSetChanged()
+            bottomSheetDialog?.dismiss()
+        }
+        bottomSheetDialog?.Z_ASort?.setOnClickListener {
+            driverList.sortByDescending  { it.driverName }//a-z
+            (rvDriverDetail?.adapter as SearchDriverDetailAdapter)?.notifyDataSetChanged()
+            bottomSheetDialog?.dismiss()
+        }
+        bottomSheetDialog?.New_OldSort?.setOnClickListener {
+            driverList.sortBy { (it.timeStamp as Long) }//new
+            (rvDriverDetail?.adapter as SearchDriverDetailAdapter)?.notifyDataSetChanged()
+            bottomSheetDialog?.dismiss()
+        }
+        bottomSheetDialog?.Old_NewSort?.setOnClickListener {
+            driverList.sortByDescending { (it.timeStamp as Long) }//old
+            (rvDriverDetail?.adapter as SearchDriverDetailAdapter)?.notifyDataSetChanged()
+            bottomSheetDialog?.dismiss()
+        }
+        bottomSheetDialog?.show()
     }
 
     //for fetch value from database
@@ -153,14 +175,7 @@ class SearchDriverDetailFragment : BaseFragment(), View.OnClickListener {
                     timeStamp = data?.timeStamp ?: 0
                 )
             )
-         /*   driverList.sortBy { it.driverName }//a-z
-            (rvDriverDetail?.adapter as SearchDriverDetailAdapter)?.notifyDataSetChanged()
-            driverList.sortByDescending { it.driverName }//z-a
-            (rvDriverDetail?.adapter as SearchDriverDetailAdapter)?.notifyDataSetChanged()
-            driverList.sortBy { (it.timeStamp as Long) }//new
-            (rvDriverDetail?.adapter as SearchDriverDetailAdapter)?.notifyDataSetChanged()
-            driverList.sortByDescending { (it.timeStamp as Long) }//old
-            (rvDriverDetail?.adapter as SearchDriverDetailAdapter)?.notifyDataSetChanged()*/
+
 
             Log.e("fireBase", "onChildMoved${data}")
             this@SearchDriverDetailFragment.context?.let {mContext->

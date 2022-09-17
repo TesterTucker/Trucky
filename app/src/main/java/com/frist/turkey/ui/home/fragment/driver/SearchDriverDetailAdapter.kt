@@ -44,6 +44,5 @@ class SearchDriverDetailAdapter(var context: Context, var driverList: ArrayList<
 
     interface EditDriver {
         fun onClickEditDriver(driverModel:Driver)
-
     }
 }

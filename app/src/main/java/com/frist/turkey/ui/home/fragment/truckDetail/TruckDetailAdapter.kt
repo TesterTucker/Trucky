@@ -11,7 +11,8 @@ import com.frist.turkey.model.TruckDetail
 import kotlinx.android.synthetic.main.item_driver_detail.view.*
 
 
-class TruckDetailAdapter(var context: Context, var truckDetailList: ArrayList<TruckDetail>) :
+class TruckDetailAdapter(var context: Context, var truckDetailList: ArrayList<TruckDetail>,
+                            var editTruckDetail:EditTruckDetail) :
     RecyclerView.Adapter<TruckDetailAdapter.ViewHolder>() {
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -29,11 +30,19 @@ class TruckDetailAdapter(var context: Context, var truckDetailList: ArrayList<Tr
 
             Name.text=  truckDetailList.get(position).driverName
             Phone.text=  truckDetailList.get(position).truckBrand
-
+            editDriverDetail.setOnClickListener {
+                editTruckDetail.onClickEditTruck(truckDetailList.get(position))
+            }
         }
     }
 
     override fun getItemCount(): Int {
         return truckDetailList.size
     }
+
+    interface EditTruckDetail {
+        fun onClickEditTruck(TruckModel:TruckDetail)
+    }
+
+
 }

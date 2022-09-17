@@ -10,6 +10,16 @@
         android:layout_height="match_parent"
         tools:context=".ui.home.fragment.truckDetail.TruckDetailFragment">
 
+
+        <ProgressBar
+            android:id="@+id/pbSearchDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"/>
         <TextView
             android:id="@+id/tvHeading_TruckDetails"
             android:layout_width="match_parent"
@@ -31,7 +41,7 @@
             android:gravity="center_horizontal"
             android:text="Ease the you manage your Trucks  "
             android:textColor="#698296"
-            android:textSize="8sp"
+            android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvHeading_TruckDetails" />
@@ -57,7 +67,7 @@
             android:layout_marginTop="16dp"
             android:text="Dealer Details"
             android:textColor="#0F006A"
-            android:textSize="12sp"
+            android:textSize="15sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/subHeading_TruckDetails" />
 
@@ -67,7 +77,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="9dp"
             android:text="Dealer Name"
-            android:textSize="8sp"
+            android:textSize="12sp"
             app:layout_constraintStart_toStartOf="@+id/tvDelarDetail"
             app:layout_constraintTop_toBottomOf="@+id/tvDelarDetail" />
         <androidx.cardview.widget.CardView
@@ -89,7 +99,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@null"
-                android:textSize="8sp"
+                android:textSize="15sp"
+                android:hint="Dealer Name"
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
                 android:singleLine="true"
@@ -103,7 +114,7 @@
             android:layout_marginStart="15dp"
             android:layout_marginTop="8dp"
             android:text="Truck Brand"
-            android:textSize="8sp"
+            android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardDealerName" />
 
@@ -129,7 +140,8 @@
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
                 android:singleLine="true"
-                android:textSize="8sp" />
+                android:textSize="15sp"
+                android:hint="Truck Brand" />
         </androidx.cardview.widget.CardView>
 
         <TextView
@@ -138,7 +150,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
             android:text="Rate"
-            android:textSize="8sp"
+            android:textSize="12sp"
             app:layout_constraintStart_toStartOf="@+id/tvDelarDetail"
             app:layout_constraintTop_toBottomOf="@+id/cardTruckBrand" />
 
@@ -164,7 +176,9 @@
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
                 android:singleLine="true"
-                android:textSize="8sp" />
+                android:inputType="number"
+                android:textSize="15sp"
+                android:hint="Rate"/>
         </androidx.cardview.widget.CardView>
 
         <TextView
@@ -175,7 +189,7 @@
             android:layout_marginTop="19dp"
             android:text="Truck Details"
             android:textColor="#0F006A"
-            android:textSize="12sp"
+            android:textSize="15sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardRate" />
 
@@ -185,7 +199,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
             android:text="Truck Number"
-            android:textSize="8sp"
+            android:textSize="12sp"
             app:layout_constraintStart_toStartOf="@+id/tvDelarDetail"
             app:layout_constraintTop_toBottomOf="@+id/tvTruckDetails" />
 
@@ -211,7 +225,8 @@
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
                 android:singleLine="true"
-                android:textSize="8sp" />
+                android:textSize="15sp"
+                android:hint="Truck Number"/>
         </androidx.cardview.widget.CardView>
         <TextView
             android:id="@+id/tvTruckPurchaseDate"
@@ -219,7 +234,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
             android:text="Purchase Date"
-            android:textSize="8sp"
+            android:textSize="12sp"
             app:layout_constraintStart_toStartOf="@+id/tvDelarDetail"
             app:layout_constraintTop_toBottomOf="@+id/cardTruckNumber" />
         <androidx.cardview.widget.CardView
@@ -244,7 +259,8 @@
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
                 android:singleLine="true"
-                android:textSize="8sp" />
+                android:textSize="15sp"
+                android:hint="Purchase Date"/>
         </androidx.cardview.widget.CardView>
         <TextView
             android:id="@+id/tvInsuranceDetails"
@@ -254,7 +270,7 @@
             android:layout_marginTop="26dp"
             android:text="Insurance Details"
             android:textColor="#0F006A"
-            android:textSize="12sp"
+            android:textSize="15sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardTruckPurchaseDate" />
 
@@ -264,7 +280,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
             android:text="Company Name"
-            android:textSize="8sp"
+            android:textSize="12sp"
             app:layout_constraintStart_toStartOf="@+id/tvDelarDetail"
             app:layout_constraintTop_toBottomOf="@+id/tvInsuranceDetails" />
         <androidx.cardview.widget.CardView
@@ -289,7 +305,8 @@
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
                 android:singleLine="true"
-                android:textSize="8sp" />
+                android:textSize="15sp"
+                android:hint="Company Name" />
         </androidx.cardview.widget.CardView>
         <TextView
             android:id="@+id/tvInsuranceDate"
@@ -297,7 +314,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
             android:text="Insurance Date"
-            android:textSize="8sp"
+            android:textSize="12sp"
             app:layout_constraintStart_toStartOf="@+id/tvDelarDetail"
             app:layout_constraintTop_toBottomOf="@+id/cardCompanyName" />
         <androidx.cardview.widget.CardView
@@ -322,7 +339,8 @@
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
                 android:singleLine="true"
-                android:textSize="8sp" />
+                android:textSize="15sp"
+                android:hint="Insurance Date" />
         </androidx.cardview.widget.CardView>
         <TextView
             android:id="@+id/tvRenewalDate"
@@ -330,7 +348,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
             android:text="Renewal Date"
-            android:textSize="8sp"
+            android:textSize="12sp"
             app:layout_constraintStart_toStartOf="@+id/tvDelarDetail"
             app:layout_constraintTop_toBottomOf="@+id/cardInsuranceDate" />
 
@@ -356,7 +374,8 @@
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
                 android:singleLine="true"
-                android:textSize="8sp" />
+                android:textSize="15sp"
+                android:hint="Renewal Date" />
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             android:id="@+id/uplaodInsurence"
@@ -380,7 +399,7 @@
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="10dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:textSize="12sp"
+                    android:textSize="15sp"
                     app:layout_constraintTop_toTopOf="@+id/ivUpload_Insurence"
                     app:layout_constraintBottom_toBottomOf="@+id/ivUpload_Insurence"
                     app:layout_constraintStart_toEndOf="@+id/ivUpload_Insurence"
@@ -412,7 +431,7 @@
             android:layout_marginTop="19dp"
             android:text="Fitness"
             android:textColor="#0F006A"
-            android:textSize="12sp"
+            android:textSize="15sp"
             app:layout_constraintStart_toStartOf="@+id/uplaodInsurence"
             app:layout_constraintTop_toBottomOf="@+id/uplaodInsurence" />
         <TextView
@@ -421,7 +440,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
             android:text="Company Name"
-            android:textSize="8sp"
+            android:textSize="12sp"
             app:layout_constraintStart_toStartOf="@+id/tvTruckFitness"
             app:layout_constraintTop_toBottomOf="@+id/tvTruckFitness" />
         <androidx.cardview.widget.CardView
@@ -446,7 +465,8 @@
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
                 android:singleLine="true"
-                android:textSize="8sp" />
+                android:textSize="15sp"
+                android:hint="Fitness Company Name"/>
         </androidx.cardview.widget.CardView>
 
         <TextView
@@ -455,7 +475,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
             android:text="Fitness Date"
-            android:textSize="8sp"
+            android:textSize="12sp"
             app:layout_constraintStart_toStartOf="@+id/cardFitnessCompanyName"
             app:layout_constraintTop_toBottomOf="@+id/cardFitnessCompanyName" />
         <androidx.cardview.widget.CardView
@@ -480,7 +500,8 @@
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
                 android:singleLine="true"
-                android:textSize="8sp" />
+                android:textSize="15sp"
+                android:hint="Fitness Date" />
         </androidx.cardview.widget.CardView>
         <TextView
             android:id="@+id/tvRenewal_Date"
@@ -488,7 +509,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
             android:text="Renewal Date"
-            android:textSize="8sp"
+            android:textSize="12sp"
             app:layout_constraintStart_toStartOf="@+id/cardFitnessDate"
             app:layout_constraintTop_toBottomOf="@+id/cardFitnessDate" />
 
@@ -514,7 +535,8 @@
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
                 android:singleLine="true"
-                android:textSize="8sp" />
+                android:textSize="15sp"
+                android:hint="Renewal Date"/>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -539,7 +561,7 @@
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="10dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:textSize="12sp"
+                    android:textSize="15sp"
                     app:layout_constraintTop_toTopOf="@+id/ivuplaodFitness_document"
                     app:layout_constraintBottom_toBottomOf="@+id/ivuplaodFitness_document"
                     app:layout_constraintStart_toEndOf="@+id/ivuplaodFitness_document"
@@ -570,7 +592,7 @@
             android:layout_marginTop="19dp"
             android:text="Tax"
             android:textColor="#0F006A"
-            android:textSize="12sp"
+            android:textSize="15sp"
             app:layout_constraintStart_toStartOf="@+id/card_uplaodFitness_document"
             app:layout_constraintTop_toBottomOf="@+id/card_uplaodFitness_document" />
         <TextView
@@ -579,7 +601,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
             android:text="Tax company Name"
-            android:textSize="8sp"
+            android:textSize="12sp"
             app:layout_constraintStart_toStartOf="@+id/tvTax"
             app:layout_constraintTop_toBottomOf="@+id/tvTax" />
         <androidx.cardview.widget.CardView
@@ -604,7 +626,8 @@
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
                 android:singleLine="true"
-                android:textSize="8sp" />
+                android:textSize="15sp"
+                android:hint="Tax company Name" />
         </androidx.cardview.widget.CardView>
 
         <TextView
@@ -613,7 +636,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
             android:text="Tax Date"
-            android:textSize="8sp"
+            android:textSize="12sp"
             app:layout_constraintStart_toStartOf="@+id/cardTaxCompanyName"
             app:layout_constraintTop_toBottomOf="@+id/cardTaxCompanyName" />
         <androidx.cardview.widget.CardView
@@ -638,7 +661,8 @@
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
                 android:singleLine="true"
-                android:textSize="8sp" />
+                android:textSize="15sp"
+                android:hint="Tax Date" />
         </androidx.cardview.widget.CardView>
         <TextView
             android:id="@+id/tvTaxRenewalDate"
@@ -646,7 +670,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
             android:text="Renewal Date"
-            android:textSize="8sp"
+            android:textSize="12sp"
             app:layout_constraintStart_toStartOf="@+id/cardTaxDate"
             app:layout_constraintTop_toBottomOf="@+id/cardTaxDate" />
         <androidx.cardview.widget.CardView
@@ -671,7 +695,8 @@
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
                 android:singleLine="true"
-                android:textSize="8sp" />
+                android:textSize="15sp"
+                android:hint="Renewal Date"/>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -726,7 +751,7 @@
             android:layout_marginTop="26dp"
             android:text="National Permit"
             android:textColor="#0F006A"
-            android:textSize="12sp"
+            android:textSize="15sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/card_uplaodTax_document" />
         <TextView
@@ -735,7 +760,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
             android:text="Company Name"
-            android:textSize="8sp"
+            android:textSize="12sp"
             app:layout_constraintStart_toStartOf="@+id/tvNationalPermit"
             app:layout_constraintTop_toBottomOf="@+id/tvNationalPermit" />
 
@@ -761,7 +786,8 @@
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
                 android:singleLine="true"
-                android:textSize="8sp" />
+                android:textSize="15sp"
+                android:hint="Permit Company Name" />
         </androidx.cardview.widget.CardView>
         <TextView
             android:id="@+id/tvPermitDate"
@@ -769,7 +795,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
             android:text="Permit Date"
-            android:textSize="8sp"
+            android:textSize="12sp"
             app:layout_constraintStart_toStartOf="@+id/cardPermitCompanyName"
             app:layout_constraintTop_toBottomOf="@+id/cardPermitCompanyName" />
         <androidx.cardview.widget.CardView
@@ -794,7 +820,8 @@
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
                 android:singleLine="true"
-                android:textSize="8sp" />
+                android:textSize="15sp"
+                android:hint="Permit Date" />
         </androidx.cardview.widget.CardView>
         <TextView
             android:id="@+id/tvPermitRenewalDate"
@@ -802,7 +829,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="14dp"
             android:text="Renewal Date"
-            android:textSize="8sp"
+            android:textSize="12sp"
             app:layout_constraintStart_toStartOf="@+id/cardPermitDate"
             app:layout_constraintTop_toBottomOf="@+id/cardPermitDate" />
         <androidx.cardview.widget.CardView
@@ -827,14 +854,15 @@
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
                 android:singleLine="true"
-                android:textSize="8sp" />
+                android:textSize="15sp"
+                android:hint="Renewal Date" />
         </androidx.cardview.widget.CardView>
         <TextView
             android:id="@+id/tvPermitNo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Permit No"
-            android:textSize="8sp"
+            android:textSize="12sp"
             android:layout_marginStart="15dp"
             app:layout_constraintTop_toTopOf="@+id/tvPermitCompanyName"
             app:layout_constraintBottom_toBottomOf="@+id/tvPermitCompanyName"
@@ -863,7 +891,8 @@
                 android:paddingStart="10dp"
                 android:singleLine="true"
                 android:inputType="number"
-                android:textSize="8sp" />
+                android:textSize="15sp"
+                android:hint="Permit Number"/>
         </androidx.cardview.widget.CardView>
 
         <TextView
@@ -871,7 +900,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Renewal After"
-            android:textSize="8sp"
+            android:textSize="12sp"
             android:layout_marginStart="15dp"
             app:layout_constraintTop_toTopOf="@+id/tvPermitDate"
             app:layout_constraintBottom_toBottomOf="@+id/tvPermitDate"
@@ -889,7 +918,7 @@
             app:layout_constraintStart_toStartOf="@id/tvPermitRenewalAfter"
             app:layout_constraintTop_toBottomOf="@+id/tvPermitRenewalAfter">
 
-            <EditText
+            <TextView
                 android:id="@+id/etPermitRenewalAfterDay"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -897,7 +926,8 @@
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
                 android:singleLine="true"
-                android:textSize="8sp" />
+                android:textSize="15sp"
+                />
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             android:id="@+id/cardPermit_RenewalAfterMonth"
@@ -913,7 +943,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/cardPermitRenewalAfter"
             app:layout_constraintStart_toEndOf="@+id/cardPermitRenewalAfter">
 
-            <EditText
+            <TextView
                 android:id="@+id/etPermit_RenewalAfterMonth"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -921,7 +951,8 @@
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
                 android:singleLine="true"
-                android:textSize="8sp" />
+                android:textSize="15sp"
+                />
         </androidx.cardview.widget.CardView>
 
 
@@ -938,7 +969,7 @@
             android:textSize="10dp"
             android:layout_marginEnd="30dp"
             android:paddingVertical="3dp"
-            android:paddingHorizontal="12sp"
+            android:paddingHorizontal="15sp"
             android:layout_marginTop="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginBottom="30dp"
@@ -951,7 +982,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Renewal After"
-            android:textSize="8sp"
+            android:textSize="12sp"
             android:layout_marginStart="15dp"
             app:layout_constraintTop_toTopOf="@+id/tvTaxDate"
             app:layout_constraintBottom_toBottomOf="@+id/tvTaxDate"
@@ -971,7 +1002,7 @@
             app:layout_constraintStart_toStartOf="@+id/tvTaxRenewalAfter"
             app:layout_constraintTop_toBottomOf="@+id/tvTaxRenewalAfter">
 
-            <EditText
+            <TextView
                 android:id="@+id/etTax_RenewalAfterDay"
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
@@ -979,7 +1010,7 @@
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
                 android:singleLine="true"
-                android:textSize="8sp" />
+                android:textSize="12sp" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -996,7 +1027,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/cardTax_RenewalAfter"
             app:layout_constraintStart_toEndOf="@+id/cardTax_RenewalAfter">
 
-            <EditText
+            <TextView
                 android:id="@+id/etTax_RenewalAfterMonth"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -1004,7 +1035,7 @@
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
                 android:singleLine="true"
-                android:textSize="8sp" />
+                android:textSize="12sp" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -1029,7 +1060,8 @@
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
                 android:singleLine="true"
-                android:textSize="8sp" />
+                android:textSize="15sp"
+                android:hint="Tax No"/>
         </androidx.cardview.widget.CardView>
 
         <TextView
@@ -1037,7 +1069,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tax No"
-            android:textSize="8sp"
+            android:textSize="12sp"
             android:layout_marginStart="15dp"
             app:layout_constraintTop_toTopOf="@+id/tvTaxcompanyName"
             app:layout_constraintBottom_toBottomOf="@+id/tvTaxcompanyName"
@@ -1050,7 +1082,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Purchase Date"
-            android:textSize="8sp"
+            android:textSize="12sp"
             android:layout_marginStart="15dp"
             app:layout_constraintTop_toTopOf="@+id/tvDealerName"
             app:layout_constraintBottom_toBottomOf="@+id/tvDealerName"
@@ -1077,7 +1109,8 @@
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
                 android:singleLine="true"
-                android:textSize="8sp" />
+                android:textSize="15sp"
+                android:hint="Purchase Date" />
         </androidx.cardview.widget.CardView>
 
         <TextView
@@ -1085,8 +1118,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Model"
-            android:textSize="8sp"
-            android:layout_marginStart="15dp"
+            android:textSize="12sp"
+            android:layout_marginStart="12dp"
             app:layout_constraintTop_toTopOf="@+id/tvTruckBrand"
             app:layout_constraintBottom_toBottomOf="@+id/tvTruckBrand"
             app:layout_constraintStart_toStartOf="@id/guideline2" />
@@ -1112,14 +1145,15 @@
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
                 android:singleLine="true"
-                android:textSize="8sp" />
+                android:textSize="15sp"
+                android:hint="Model"/>
         </androidx.cardview.widget.CardView>
         <TextView
             android:id="@+id/tvChaiseNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Chaise Number"
-            android:textSize="8sp"
+            android:textSize="12sp"
             android:layout_marginStart="15dp"
             app:layout_constraintTop_toTopOf="@+id/tvTruckNumber"
             app:layout_constraintBottom_toBottomOf="@+id/tvTruckNumber"
@@ -1147,14 +1181,15 @@
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
                 android:singleLine="true"
-                android:textSize="8sp" />
+                android:textSize="15sp"
+                android:hint="Chaise Number"/>
         </androidx.cardview.widget.CardView>
         <TextView
             android:id="@+id/tvNoOfTyres"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="No. of Tyres"
-            android:textSize="8sp"
+            android:textSize="12sp"
             android:layout_marginStart="15dp"
             app:layout_constraintTop_toTopOf="@+id/tvTruckPurchaseDate"
             app:layout_constraintBottom_toBottomOf="@+id/tvTruckPurchaseDate"
@@ -1181,7 +1216,9 @@
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
                 android:singleLine="true"
-                android:textSize="8sp" />
+                android:textSize="15sp"
+                android:inputType="number"
+                android:hint="Number Of Tyre" />
         </androidx.cardview.widget.CardView>
 
 
@@ -1190,7 +1227,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Fitness No"
-            android:textSize="8sp"
+            android:textSize="12sp"
             android:layout_marginStart="15dp"
             app:layout_constraintTop_toTopOf="@+id/tvFitnessCompanyName"
             app:layout_constraintBottom_toBottomOf="@+id/tvFitnessCompanyName"
@@ -1218,7 +1255,8 @@
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
                 android:singleLine="true"
-                android:textSize="8sp" />
+                android:textSize="15sp"
+                android:hint="Fitness No"/>
         </androidx.cardview.widget.CardView>
 
         <TextView
@@ -1226,7 +1264,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Renewal After"
-            android:textSize="8sp"
+            android:textSize="12sp"
             android:layout_marginStart="15dp"
             app:layout_constraintTop_toTopOf="@+id/tvFitnessDate"
             app:layout_constraintBottom_toBottomOf="@+id/tvFitnessDate"
@@ -1245,7 +1283,7 @@
             app:layout_constraintStart_toStartOf="@+id/tvFitness_RenewalAfter"
             app:layout_constraintTop_toBottomOf="@+id/tvFitness_RenewalAfter">
 
-            <EditText
+            <TextView
                 android:id="@+id/etFitness_RenewalAfterDay"
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
@@ -1253,7 +1291,8 @@
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
                 android:singleLine="true"
-                android:textSize="8sp" />
+                android:textSize="15sp"
+                 />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -1270,7 +1309,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/cardFitness_RenewalAfter"
             app:layout_constraintStart_toEndOf="@+id/cardFitness_RenewalAfter">
 
-            <EditText
+            <TextView
                 android:id="@+id/etFitness_RenewalAfterMonth"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -1278,7 +1317,8 @@
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
                 android:singleLine="true"
-                android:textSize="8sp" />
+                android:textSize="15sp"
+                 />
         </androidx.cardview.widget.CardView>
 
 
@@ -1304,7 +1344,8 @@
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
                 android:singleLine="true"
-                android:textSize="8sp" />
+                android:textSize="15sp"
+                android:hint="Insurance Number" />
         </androidx.cardview.widget.CardView>
 
         <TextView
@@ -1312,7 +1353,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Renewal After"
-            android:textSize="8sp"
+            android:textSize="12sp"
             android:layout_marginStart="15dp"
             app:layout_constraintTop_toTopOf="@+id/tvInsuranceDate"
             app:layout_constraintBottom_toBottomOf="@+id/tvInsuranceDate"
@@ -1329,7 +1370,7 @@
             app:layout_constraintStart_toStartOf="@id/tvRenewalAfter"
             app:layout_constraintTop_toBottomOf="@+id/tvRenewalAfter">
 
-            <EditText
+            <TextView
                 android:id="@+id/etRenewalAfterDay"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -1337,8 +1378,21 @@
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
                 android:singleLine="true"
-                android:textSize="8sp" />
+                android:textSize="15sp"
+               />
         </androidx.cardview.widget.CardView>
+
+
+    <!--    <View
+            android:id="@+id/ViewPopup"
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cardRenewalAfter"
+            app:layout_constraintEnd_toEndOf="@+id/cardRenewalAfter"
+            app:layout_constraintStart_toStartOf="@+id/cardRenewalAfter"
+            app:layout_constraintTop_toTopOf="@+id/cardRenewalAfter"
+            />-->
+
 
 
         <TextView
@@ -1346,7 +1400,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Insurance No"
-            android:textSize="8sp"
+            android:textSize="12sp"
             android:layout_marginStart="15dp"
             app:layout_constraintTop_toTopOf="@+id/tvCompanyName"
             app:layout_constraintBottom_toBottomOf="@+id/tvCompanyName"
@@ -1365,7 +1419,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/cardRenewalAfter"
             app:layout_constraintStart_toEndOf="@+id/cardRenewalAfter">
 
-            <EditText
+            <TextView
                 android:id="@+id/etRenewalAfterMonth"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -1373,7 +1427,8 @@
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
                 android:singleLine="true"
-                android:textSize="8sp" />
+                android:textSize="15sp"
+                />
         </androidx.cardview.widget.CardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
