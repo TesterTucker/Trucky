@@ -18,6 +18,7 @@ import com.frist.turkey.menu.SimpleItem
 import com.frist.turkey.ui.home.fragment.ClientDetailFragment.ClientDetailFragment
 import com.frist.turkey.ui.home.fragment.HomeFragment
 import com.frist.turkey.ui.home.fragment.TyreDetail.TyreDetailFragment
+import com.frist.turkey.ui.home.fragment.bilty.BiltyFragment
 
 import com.frist.turkey.ui.home.fragment.driver.SearchDriverDetailFragment
 import com.frist.turkey.ui.home.fragment.truckDetail.TruckDetailFragment
@@ -79,7 +80,8 @@ class HomeActivity : AppCompatActivity(), DrawerAdapter.OnItemSelectedListener {
                 slidingRootNav?.closeMenu()
             }
             POS_Create_Bilty->{
-               // showFragment(TruckDetailFragment.createFor(screenTitles?.get(position)))
+                showFragment(BiltyFragment.createFor(screenTitles?.get(position)))
+                slidingRootNav?.closeMenu()
             }
             POSDriver_Details->{
 

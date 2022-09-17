@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.home.fragment.bilty.BiltyFragment">
+
+    <TextView
+        android:id="@+id/tvHeadingOperation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:text="Operations"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/subHeadingOperation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:gravity="center_horizontal"
+        android:text="Ease the you manage your Trucks  "
+        android:textColor="#698296"
+        android:textSize="8sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHeadingOperation" />
+<TextView
+    android:id="@+id/tvBilty"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@+id/subHeadingOperation"
+    android:text="Bilty"
+    android:layout_marginTop="10dp"
+    android:textSize="20sp"
+    app:layout_constraintStart_toStartOf="parent"
+    android:layout_marginStart="20dp"
+    android:textStyle="bold"/>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    app:layout_constraintTop_toBottomOf="@+id/tvBilty"
+    app:layout_constraintBottom_toTopOf="@+id/tvShareBilty"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:layout_marginHorizontal="20dp"
+    android:background="@drawable/capture">
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/tvShareBilty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="share"
+        android:textColor="@color/white"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="15dp"
+        android:paddingVertical="5dp"
+        android:paddingHorizontal="25dp"
+        android:background="@drawable/bg_share"/>
+
+    <TextView
+        android:id="@+id/tvSaveBuilty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_save"
+        android:text="Save"
+        android:textColor="@color/white"
+        android:layout_marginEnd="15dp"
+        android:paddingVertical="5dp"
+        android:paddingHorizontal="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvShareBilty"
+        app:layout_constraintEnd_toStartOf="@+id/tvShareBilty"
+        app:layout_constraintTop_toTopOf="@+id/tvShareBilty" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -54,6 +54,7 @@ class SearchDriverDetailFragment : BaseFragment(), View.OnClickListener {
         super.onResume()
         driverList.clear()
         databaseReference.child("DriverDetail").addChildEventListener(childEventListener)
+
     }
 
     override fun initControl() {
