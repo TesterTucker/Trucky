@@ -1,5 +1,6 @@
 package com.frist.turkey.ui.home.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.frist.turkey.R
+import com.frist.turkey.ui.Operation.OperationActivity
 import com.frist.turkey.ui.home.HomeActivity
 import com.yarolegovich.slidingrootnav.SlidingRootNav
 import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder
@@ -82,7 +84,9 @@ class HomeFragment : Fragment(), View.OnClickListener {
     override fun onClick(p0: View?) {
         when(p0?.id){
             R.id.cardOpertion->{
+
                 Toast.makeText(requireContext(), "card Opertion", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(requireContext(), OperationActivity::class.java))
             }
             R.id.cardPayment->{
                 Toast.makeText(requireContext(), "card Payment", Toast.LENGTH_SHORT).show()

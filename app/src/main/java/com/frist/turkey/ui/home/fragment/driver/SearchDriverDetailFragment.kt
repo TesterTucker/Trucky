@@ -14,6 +14,8 @@ import com.frist.turkey.R
 import com.frist.turkey.base.BaseFragment
 import com.frist.turkey.model.Driver
 import com.frist.turkey.model.TyreDetail
+import com.frist.turkey.ui.home.HomeActivity
+import com.frist.turkey.ui.home.fragment.HomeFragment
 import com.frist.turkey.ui.home.fragment.TyreDetail.TyreDetailFragment
 import com.frist.turkey.utils.statusBarTransparent
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -48,6 +50,7 @@ class SearchDriverDetailFragment : BaseFragment(), View.OnClickListener {
 
     override fun initViews() {
         databaseReference = FirebaseDatabase.getInstance().reference
+
     }
 
     override fun onResume() {
@@ -118,6 +121,10 @@ class SearchDriverDetailFragment : BaseFragment(), View.OnClickListener {
             }
         }
     }
+
+
+
+
 
     private fun openBottomSheet() {
 

@@ -23,14 +23,14 @@
             android:id="@+id/ivMenu"
             android:layout_width="35dp"
             android:layout_height="35dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="35dp"
             android:layout_marginStart="15dp"
             android:src="@drawable/ic_baseline_menu_24"/>
 
         <ImageView
             android:layout_width="35dp"
             android:layout_height="35dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="35dp"
             android:layout_marginStart="280dp"
 
             android:src="@drawable/ic_baseline_person_24"/>

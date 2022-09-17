@@ -76,7 +76,7 @@
        android:layout_marginTop="10dp"
        android:background="@drawable/bg_save"
        android:padding="10dp"
-       android:text="Add Driver Detail"
+       android:text="Client Detail"
        android:textColor="@color/white"
        android:textSize="12sp"
        app:layout_constraintStart_toStartOf="parent"

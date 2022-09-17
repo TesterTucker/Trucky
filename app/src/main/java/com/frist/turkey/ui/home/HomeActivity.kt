@@ -35,6 +35,7 @@ class HomeActivity : AppCompatActivity(), DrawerAdapter.OnItemSelectedListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
+
         ivMenu.setOnClickListener {
             slidingRootNav?.openMenu()
         }
@@ -73,6 +74,39 @@ class HomeActivity : AppCompatActivity(), DrawerAdapter.OnItemSelectedListener {
         adapter.setSelected(POS_HOME)
     }
 
+
+    override fun onBackPressed() {
+
+       // supportFragmentManager.findFragmentById(R.id.container)
+        when(supportFragmentManager.findFragmentById(R.id.container)){
+            is SearchDriverDetailFragment->{
+                showFragment(HomeFragment.createFor(screenTitles?.get(0)))
+                slidingRootNav?.closeMenu()
+            }
+            is BiltyFragment->{
+                showFragment(HomeFragment.createFor(screenTitles?.get(0)))
+                slidingRootNav?.closeMenu()
+            }
+
+            is TruckDetailFragment->{
+                showFragment(HomeFragment.createFor(screenTitles?.get(0)))
+                slidingRootNav?.closeMenu()
+            }
+            is TyreDetailFragment->{
+                showFragment(HomeFragment.createFor(screenTitles?.get(0)))
+                slidingRootNav?.closeMenu()
+            }
+            is ClientDetailFragment->{
+                showFragment(HomeFragment.createFor(screenTitles?.get(0)))
+                slidingRootNav?.closeMenu()
+            }
+
+            else->{
+                super.onBackPressed()
+
+            }
+        }
+    }
     override fun onItemSelected(position: Int) {
         when(position){
             POS_HOME->{
@@ -129,7 +163,7 @@ class HomeActivity : AppCompatActivity(), DrawerAdapter.OnItemSelectedListener {
 
     }
 
-    private fun showFragment(fragment: Fragment) {
+    private  fun showFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(R.id.container, fragment)
             .commit()
