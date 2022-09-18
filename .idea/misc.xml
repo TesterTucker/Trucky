@@ -16,6 +16,7 @@
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/drawable/bg_share.xml" value="0.2105" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/drawable/bg_sharebuilty.xml" value="0.2105" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/drawable/bg_submit.xml" value="0.1875" />
+        <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/drawable/bg_white.xml" value="0.1825" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/drawable/card.xml" value="0.101" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/drawable/ic_launcher_background.xml" value="0.137" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/drawable/popup_solid_curve.xml" value="0.17" />
@@ -26,11 +27,13 @@
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/activity_home.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/activity_main.xml" value="0.16510416666666666" />
+        <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/activity_operation.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/activity_otp.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/activity_sample.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/activity_search_detail.xml" value="0.28654970760233917" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/activity_signup.xml" value="0.2" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/activity_splash.xml" value="0.17916666666666667" />
+        <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/activity_vehicle.xml" value="0.22" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/content.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/dialog_share_builty.xml" value="0.203125" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/fragment_bilty.xml" value="0.20416666666666666" />
