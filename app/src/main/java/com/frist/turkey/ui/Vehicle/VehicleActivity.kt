@@ -4,8 +4,12 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.fragment.app.Fragment
 import com.frist.turkey.R
 import com.frist.turkey.base.BaseActivity
+import com.frist.turkey.ui.Vehicle.fragment.BrokerVehicleFragment
+import com.frist.turkey.ui.Vehicle.fragment.MarketVehicleFragment
+import com.frist.turkey.ui.Vehicle.fragment.OwnVehicleFragment
 import kotlinx.android.synthetic.main.activity_vehicle.*
 
 class VehicleActivity :BaseActivity(), View.OnClickListener {
@@ -18,6 +22,7 @@ class VehicleActivity :BaseActivity(), View.OnClickListener {
 
     override fun initViews() {
         constraintOwnVehicleBackground()
+        showFragment(OwnVehicleFragment())
     }
 
     override fun initControl() {
@@ -45,6 +50,7 @@ class VehicleActivity :BaseActivity(), View.OnClickListener {
 
     private fun constraintBrokerBackground() {
         tvHeadingVehicle.text="Broker Vehicle"
+        showFragment(BrokerVehicleFragment())
 
     }
 
@@ -60,6 +66,7 @@ class VehicleActivity :BaseActivity(), View.OnClickListener {
         constraintBroker.setBackgroundResource(R.color.white)
         tvBroker.setTextColor(Color.parseColor("#858585"))
         tvBroker_SubHeading.setTextColor(Color.parseColor("#858585"))
+        showFragment(MarketVehicleFragment())
     }
 
     private fun constraintOwnVehicleBackground() {
@@ -70,5 +77,12 @@ class VehicleActivity :BaseActivity(), View.OnClickListener {
         constraintMarketVehicle.setBackgroundResource(R.color.white)
         tvMarket_Vehicle.setTextColor(Color.parseColor("#858585"))
         tvMarket_Vehicle_SubHeading.setTextColor(Color.parseColor("#858585"))
+        showFragment(OwnVehicleFragment())
+    }
+
+    private  fun showFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.frame_vehicle, fragment)
+            .commit()
     }
 }

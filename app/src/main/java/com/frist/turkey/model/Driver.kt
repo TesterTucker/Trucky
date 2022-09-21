@@ -76,3 +76,9 @@ data class ClientDetail(
     var accountNumber:String?=null,
     var ifscCode:String?=null
 ):Parcelable
+
+
+data class MarketVehicle(
+        var vehicletype:String,
+        
+)

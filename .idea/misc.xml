@@ -37,10 +37,13 @@
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/content.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/dialog_share_builty.xml" value="0.203125" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/fragment_bilty.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/fragment_broker_vehicle.xml" value="0.33" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/fragment_centered_text.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/fragment_client_detail.xml" value="0.5" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/fragment_driver.xml" value="0.33" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/fragment_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/fragment_market_vehicle.xml" value="0.25" />
+        <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/fragment_own_vehicle.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/fragment_search_driver_detail.xml" value="0.18" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/fragment_text.xml" value="0.153125" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/fragment_truck_detail.xml" value="0.22" />
