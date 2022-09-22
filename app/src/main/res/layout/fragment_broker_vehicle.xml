@@ -76,7 +76,7 @@
             app:layout_constraintStart_toStartOf="@+id/dateBrokerVehicle"
             app:layout_constraintTop_toBottomOf="@+id/dateBrokerVehicle">
 
-            <EditText
+            <TextView
                 android:id="@+id/etDateBrokerVehicle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -209,6 +209,7 @@
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
                 android:singleLine="true"
+                android:inputType="number"
                 android:textSize="15sp" />
         </androidx.cardview.widget.CardView>
 
@@ -314,13 +315,14 @@
             app:layout_constraintTop_toTopOf="@+id/cardTruckNumber_BrokerVehicle">
 
             <EditText
-                android:id="@+id/etChaise_Number"
+                android:id="@+id/etChaise_Number_Broker"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@null"
                 android:hint="Chasie Number"
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
+
                 android:singleLine="true"
                 android:textSize="15sp" />
         </androidx.cardview.widget.CardView>
@@ -410,7 +412,9 @@
                 android:hint="Driver Number"
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
+
                 android:singleLine="true"
+                android:inputType="number"
                 android:textSize="15sp" />
         </androidx.cardview.widget.CardView>
 
@@ -497,6 +501,7 @@
                 android:hint="Consignor No"
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
+                android:inputType="number"
                 android:singleLine="true"
                 android:textSize="15sp" />
         </androidx.cardview.widget.CardView>
@@ -583,6 +588,7 @@
                 android:hint="Weight per tone"
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
+                android:inputType="number"
                 android:singleLine="true"
                 android:textSize="15sp" />
         </androidx.cardview.widget.CardView>
@@ -667,6 +673,7 @@
                 android:layout_height="match_parent"
                 android:background="@null"
                 android:hint="Weight"
+                android:inputType="number"
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
                 android:singleLine="true"
@@ -687,13 +694,14 @@
             android:layout_marginHorizontal="10dp">
 
             <EditText
-                android:id="@+id/etTotal_rateGiven"
+                android:id="@+id/etTotal_rateGiven_Broker"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@null"
                 android:hint="Rate"
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
+                android:inputType="number"
                 android:singleLine="true"
                 android:textSize="15sp" />
         </androidx.cardview.widget.CardView>
@@ -835,6 +843,7 @@
                 android:hint="Phone Number"
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
+                android:inputType="number"
                 android:singleLine="true"
                 android:textSize="15sp" />
         </androidx.cardview.widget.CardView>
@@ -878,6 +887,7 @@
                 android:hint="Total"
                 android:paddingVertical="10dp"
                 android:paddingStart="10dp"
+                android:inputType="number"
                 android:singleLine="true"
                 android:textSize="15sp" />
         </androidx.cardview.widget.CardView>
