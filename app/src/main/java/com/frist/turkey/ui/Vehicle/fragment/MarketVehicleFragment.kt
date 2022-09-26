@@ -1,18 +1,27 @@
 package com.frist.turkey.ui.Vehicle.fragment
 
+import android.app.AlertDialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.Toast
 import com.frist.turkey.R
 import com.frist.turkey.base.BaseFragment
 import com.frist.turkey.model.MarketVehicle
+import com.frist.turkey.model.TruckDetail
 import com.frist.turkey.utils.DatePickerHelper
+import com.frist.turkey.utils.shareDoucments
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ServerValue
+import kotlinx.android.synthetic.main.dialog_market_vehicle.*
+import kotlinx.android.synthetic.main.dialog_market_vehicle.view.*
+import kotlinx.android.synthetic.main.dialog_share_builty.view.*
 import kotlinx.android.synthetic.main.fragment_market_vehicle.*
 import java.util.*
 
@@ -20,6 +29,7 @@ import java.util.*
 class MarketVehicleFragment :BaseFragment(), View.OnClickListener {
     lateinit var datePicker: DatePickerHelper
     lateinit var databaseReference: DatabaseReference
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,6 +59,7 @@ class MarketVehicleFragment :BaseFragment(), View.OnClickListener {
     override fun initControl() {
         etDate.setOnClickListener(this)
         btn_saveMarketVehicle.setOnClickListener(this)
+
     }
 
     override fun onClick(p0: View?) {
@@ -57,51 +68,92 @@ class MarketVehicleFragment :BaseFragment(), View.OnClickListener {
               showDatePickerDialog(1)
           }
             R.id.btn_saveMarketVehicle->{
-              sendMarketVehicleDataToFirebase()
+                sendMarketVehicleDataToFirebase(MarketVehicle())
           }
         }
     }
-    private var marketVehicleId = ""
-    private fun sendMarketVehicleDataToFirebase() {
-       val date= etDate.text.toString().trim()
-       val GrNo= etGrNo.text.toString().trim()
-       val EBillNo= etEBillNo.text.toString().trim()
-       val VehicleOwner= etVehicleOwner.text.toString().trim()
-       val MobileNumber= etMobileNumber.text.toString().trim()
-       val AccountNumber= etAccountNo.text.toString().trim()
-       val IfscNumber= etIfscNumber.text.toString().trim()
-       val TruckNumber= etTruckNumber.text.toString().trim()
-       val Chaise_Number= etChaise_Number.text.toString().trim()
-       val DriverName= etDriverName.text.toString().trim()
-       val DriverNo= etDriverNo.text.toString().trim()
-       val ConsignorName= etConsignorName.text.toString().trim()
-       val ConsignorNo= etConsignorNo.text.toString().trim()
-       val ProductName= etProductName.text.toString().trim()
-       val fixedPerTonee= etfixedPerTonee.text.toString().trim()
-       val RateWeight= etRateWeight.text.toString().trim()
-       val ActualRate= etActualRate.text.toString().trim()
-       val RateGst= etRateGst.text.toString().trim()
-       val Total= etTotal.text.toString().trim()
-       val RateGiven= etRateGiven.text.toString().trim()
-       val Gst_RateGiven= etGst_RateGiven.text.toString().trim()
-       val Total_RateGiven= etTotal_RateGiven.text.toString().trim()
-       val Commission_Charge= etCommission_Charge.text.toString().trim()
-       val GuideCharge= etGuideCharge.text.toString().trim()
-       val Advance_Amount= etAdvance_Amount.text.toString().trim()
-       val Advance_Amount_paid= etAdvance_Amount_paid.text.toString().trim()
-       val AdvancePercentageDeduction= etAdvancePercentageDeduction.text.toString().trim()
-       val toatal_Advance_Amount_Paid= ettoatal_Advance_Amount_Paid.text.toString().trim()
-       val NooftimesDieselPaid= etNooftimesDieselPaid.text.toString().trim()
-       val PumpName= etPumpName.text.toString().trim()
-       val DieselRate= etDieselRate.text.toString().trim()
-       val PerLiter= etPerLiter.text.toString().trim()
-       val DieselAmount= etDieselAmount.text.toString().trim()
-       val OtherExpenses= etOtherExpenses.text.toString().trim()
-       val Remark= etRemark.text.toString().trim()
 
-        marketVehicleId = marketVehicleId ?: databaseReference.child("Market Vehicle Detail")
+    private fun openDialogue(date:String,TruckNumber:String,DriverName:String,DriverNo:String,ConsignorName:String,ConsignorNo:String,fixedPerTonee:String,RateWeight:String,RateGst:String,Total:String,startPlace:String,endPlace:String) {
+
+            var view = LayoutInflater.from(context).inflate(R.layout.dialog_market_vehicle, null)
+            var dialog = AlertDialog.Builder(context, 0).create()
+            dialog.getWindow()?.setBackgroundDrawable( ColorDrawable(Color.TRANSPARENT));
+            dialog.apply {
+                setView(view)
+
+                view.dateMarketVehicle.text="Date: ${date}"
+                view.truckNumberMarketVehicle.text="Truck Number: ${TruckNumber}"
+                view.DriverNameNumberMarketVehicle.text="Driver Name: ${DriverName}"
+                view.DriverPhoneNoNumberMarketVehicle.text="Driver Number: ${DriverNo}"
+                view.ConsignerNameMarketVehicle.text="Consigner Name: ${ConsignorName}"
+                view.ConsignerNumberMarketVehicle.text="Consigner Number: ${ConsignorNo}"
+                view.RateMarketVehicle.text="Consigner Number: ${fixedPerTonee}"
+                view.GstMarketVehicle.text="GST: ${RateGst}"
+                view.TotalAmountMarketVehicle.text="Total: ${Total}"
+                view.loadingPointMarketVehicle.text="loadingPoint: ${startPlace}"
+                view.unloadingPointMarketVehicle.text="unloadingPoint: ${endPlace}"
+                view.editMarketVehicle.setOnClickListener {
+
+                    dialog.dismiss()
+                }
+                view.shareMarketVehicle.setOnClickListener {
+                    shareDoucments()
+                    dialog.dismiss()
+                }
+                setCancelable(false)
+                setCanceledOnTouchOutside(true)
+
+            }.show()
+
+
+
+    }
+
+    private var marketVehicleId = ""
+    private fun sendMarketVehicleDataToFirebase(isMarketVehicleEdit: MarketVehicle? = null) {
+
+        val   date= etDate.text.toString().trim()
+        val GrNo= etGrNo.text.toString().trim()
+        val EBillNo= etEBillNo.text.toString().trim()
+        val VehicleOwner= etVehicleOwner.text.toString().trim()
+        val MobileNumber= etMobileNumber.text.toString().trim()
+        val AccountNumber= etAccountNo.text.toString().trim()
+        val IfscNumber= etIfscNumber.text.toString().trim()
+        val   TruckNumber= etTruckNumber.text.toString().trim()
+        val Chaise_Number= etChaise_Number.text.toString().trim()
+        val DriverName= etDriverName.text.toString().trim()
+        val DriverNo= etDriverNo.text.toString().trim()
+        val ConsignorName= etConsignorName.text.toString().trim()
+        val ConsignorNo= etConsignorNo.text.toString().trim()
+        val ProductName= etProductName.text.toString().trim()
+        val fixedPerTonee= etfixedPerTonee.text.toString().trim()
+        val RateWeight= etRateWeight.text.toString().trim()
+        val ActualRate= etActualRate.text.toString().trim()
+        val RateGst= etRateGst.text.toString().trim()
+        val Total= etTotal.text.toString().trim()
+        val RateGiven= etRateGiven.text.toString().trim()
+        val Gst_RateGiven= etGst_RateGiven.text.toString().trim()
+        val Total_RateGiven= etTotal_RateGiven.text.toString().trim()
+        val Commission_Charge= etCommission_Charge.text.toString().trim()
+        val GuideCharge= etGuideCharge.text.toString().trim()
+        val Advance_Amount= etAdvance_Amount.text.toString().trim()
+        val Advance_Amount_paid= etAdvance_Amount_paid.text.toString().trim()
+        val AdvancePercentageDeduction= etAdvancePercentageDeduction.text.toString().trim()
+        val toatal_Advance_Amount_Paid= ettoatal_Advance_Amount_Paid.text.toString().trim()
+        val NooftimesDieselPaid= etNooftimesDieselPaid.text.toString().trim()
+        val PumpName= etPumpName.text.toString().trim()
+        val DieselRate= etDieselRate.text.toString().trim()
+        val PerLiter= etPerLiter.text.toString().trim()
+        val DieselAmount= etDieselAmount.text.toString().trim()
+        val OtherExpenses= etOtherExpenses.text.toString().trim()
+        val Remark= etRemark.text.toString().trim()
+        val startPlace=etStartPlace.text.toString().trim()
+        val EndPlace=etEndPlace.text.toString().trim()
+
+        marketVehicleId =isMarketVehicleEdit?. marketVehicleId ?: databaseReference.child("Market Vehicle Detail")
             .push().key.toString()
-        if ( validateMarketVehicle()){
+
+        if (validateMarketVehicle()){
             var marketVehicle= MarketVehicle(
                 vehicletype = "Market Vehicle",
                 date = date,
@@ -141,22 +193,25 @@ class MarketVehicleFragment :BaseFragment(), View.OnClickListener {
                 OtherExpenses = OtherExpenses,
                 Remark = Remark,
                 marketVehicleId = marketVehicleId,
-                timeStamp =  ServerValue.TIMESTAMP
+                timeStamp =  ServerValue.TIMESTAMP,
+                StartPlace = startPlace,
+                EndPlace = EndPlace,
             )
 
             databaseReference.child("Market Vehicle Detail").child(marketVehicleId).setValue(marketVehicle)
                 .addOnCompleteListener {
                     if (it.isSuccessful){
+                        openDialogue(date,TruckNumber,DriverName,DriverNo,ConsignorName,ConsignorNo,fixedPerTonee,RateWeight,RateGst,Total,startPlace,EndPlace)
                         Toast.makeText(requireContext(), "set market vehicle data to firebase", Toast.LENGTH_SHORT).show()
                     }
                     else{
                         Toast.makeText(requireContext(), "failed", Toast.LENGTH_SHORT).show()
                     }
                 }
+
         }else{
 
         }
-
     }
 
     private fun showDatePickerDialog(type: Int) {
@@ -317,11 +372,19 @@ class MarketVehicleFragment :BaseFragment(), View.OnClickListener {
             Toast.makeText(requireContext(), "  Other Expenses", Toast.LENGTH_SHORT).show()
             return false
         }
+        else  if (etStartPlace.text.toString().isNullOrEmpty()){
+            Toast.makeText(requireContext(), "  Other Expenses", Toast.LENGTH_SHORT).show()
+            return false
+        }
+        else  if (etEndPlace.text.toString().isNullOrEmpty()){
+            Toast.makeText(requireContext(), "  Other Expenses", Toast.LENGTH_SHORT).show()
+            return false
+        }
         else  if (etRemark.text.toString().isNullOrEmpty()){
             Toast.makeText(requireContext(), "Remark", Toast.LENGTH_SHORT).show()
             return false
         }
-        return false
+        return true
     }
 
 }

@@ -1,5 +1,8 @@
 package com.frist.turkey.ui.Vehicle.fragment
 
+import android.app.AlertDialog
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,10 +12,13 @@ import android.widget.Toast
 import com.frist.turkey.R
 import com.frist.turkey.base.BaseFragment
 import com.frist.turkey.model.BrokerVehicle
+import com.frist.turkey.model.MarketVehicle
 import com.frist.turkey.utils.DatePickerHelper
+import com.frist.turkey.utils.shareDoucments
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ServerValue
+import kotlinx.android.synthetic.main.dialog_market_vehicle.view.*
 import kotlinx.android.synthetic.main.fragment_broker_vehicle.*
 import kotlinx.android.synthetic.main.fragment_market_vehicle.*
 import java.util.*
@@ -57,13 +63,13 @@ class BrokerVehicleFragment : BaseFragment(), View.OnClickListener {
                 showDatePickerDialog(1)
             }
             R.id.btn_saveBrokerVehicle -> {
-                sendBrokerVehicleDataToFirebase()
+                sendBrokerVehicleDataToFirebase(BrokerVehicle())
             }
         }
     }
 
     private var BrokerVehicleId = ""
-    private fun sendBrokerVehicleDataToFirebase() {
+    private fun sendBrokerVehicleDataToFirebase(isBrokerVehicleEdit: BrokerVehicle? = null) {
         val date = etDateBrokerVehicle.text.toString().trim()
         val brokerName = etBrokerName.text.toString().trim()
         val EBillNo_BrokerVehicle = etEBillNo_BrokerVehicle.text.toString().trim()
@@ -85,6 +91,11 @@ class BrokerVehicleFragment : BaseFragment(), View.OnClickListener {
         val Total_BrokerVehicle = etTotal_BrokerVehicle.text.toString().trim()
         val PaidBy_BrokerVehicle = etPaidBy_BrokerVehicle.text.toString().trim()
         val PhoneNo_Paidby_BrokerVehicle = etPhoneNo_Paidby_BrokerVehicle.text.toString().trim()
+        val LoadingPoint_BrokerVehicle = etStartPoint_BrokerVehicle.text.toString().trim()
+        val UnloadingPoint_BrokerVehicle = etEndPlaceBrokerVehicle.text.toString().trim()
+
+        BrokerVehicleId =isBrokerVehicleEdit?. BrokerVehicleId ?: databaseReference.child("Broker Vehicle Detail")
+            .push().key.toString()
 
         var brokerVehicle = BrokerVehicle(
             vehicletype = "Broker Vehicle",
@@ -110,7 +121,9 @@ class BrokerVehicleFragment : BaseFragment(), View.OnClickListener {
             PaidBy = PaidBy_BrokerVehicle,
             PaidByNumber = PhoneNo_Paidby_BrokerVehicle,
             BrokerVehicleId = BrokerVehicleId,
-            timeStamp = ServerValue.TIMESTAMP
+            timeStamp = ServerValue.TIMESTAMP,
+            loadingPoint = LoadingPoint_BrokerVehicle,
+            unloadingPoint = UnloadingPoint_BrokerVehicle,
         )
 
         if (validateBrokerVehicle()){
@@ -118,6 +131,8 @@ class BrokerVehicleFragment : BaseFragment(), View.OnClickListener {
                 .setValue(brokerVehicle)
                 .addOnCompleteListener {
                     if (it.isSuccessful) {
+                        openDialogue(date,TruckNumber_BrokeVehicle,DriverName_BrokerVehicle,DriverNoBrokerVehicle,ConsignorName_BrokerVehicle,ConsignorNo_BrokerVehicle,
+                            fixedPerTonee_BrokerVehicle,RateWeight_BrokerVehicle,Gst_BrokerVehicle,Total_BrokerVehicle,LoadingPoint_BrokerVehicle,UnloadingPoint_BrokerVehicle)
                         Toast.makeText(
                             requireContext(),
                             "set broker vehicle data to firebase",
@@ -129,6 +144,42 @@ class BrokerVehicleFragment : BaseFragment(), View.OnClickListener {
                 }
 
         }
+
+    }
+    private fun openDialogue(date:String,TruckNumber:String,DriverName:String,DriverNo:String,ConsignorName:String,ConsignorNo:String,fixedPerTonee:String,RateWeight:String,RateGst:String,Total:String,startPlace:String,endPlace:String) {
+
+        var view = LayoutInflater.from(context).inflate(R.layout.dialog_market_vehicle, null)
+        var dialog = AlertDialog.Builder(context, 0).create()
+        dialog.getWindow()?.setBackgroundDrawable( ColorDrawable(Color.TRANSPARENT));
+        dialog.apply {
+            setView(view)
+
+            view.dateMarketVehicle.text="Date: ${date}"
+            view.truckNumberMarketVehicle.text="Truck Number: ${TruckNumber}"
+            view.DriverNameNumberMarketVehicle.text="Driver Name: ${DriverName}"
+            view.DriverPhoneNoNumberMarketVehicle.text="Driver Number: ${DriverNo}"
+            view.ConsignerNameMarketVehicle.text="Consigner Name: ${ConsignorName}"
+            view.ConsignerNumberMarketVehicle.text="Consigner Number: ${ConsignorNo}"
+            view.RateMarketVehicle.text="Consigner Number: ${fixedPerTonee}"
+            view.GstMarketVehicle.text="GST: ${RateGst}"
+            view.TotalAmountMarketVehicle.text="Total: ${Total}"
+            view.loadingPointMarketVehicle.text="loadingPoint: ${startPlace}"
+            view.unloadingPointMarketVehicle.text="unloadingPoint: ${endPlace}"
+            view.editMarketVehicle.setOnClickListener {
+
+                dialog.dismiss()
+            }
+            view.shareMarketVehicle.setOnClickListener {
+                shareDoucments()
+                dialog.dismiss()
+            }
+
+            setCancelable(false)
+            setCanceledOnTouchOutside(true)
+
+        }.show()
+
+
 
     }
 
@@ -236,6 +287,14 @@ class BrokerVehicleFragment : BaseFragment(), View.OnClickListener {
         }
         else if (  etPhoneNo_Paidby_BrokerVehicle.text.toString().isNullOrEmpty()) {
             Toast.makeText(requireContext(), "Enter Paid By Number", Toast.LENGTH_SHORT).show()
+            return false
+        }
+        else if (  etStartPoint_BrokerVehicle.text.toString().isNullOrEmpty()) {
+            Toast.makeText(requireContext(), "Enter loading point", Toast.LENGTH_SHORT).show()
+            return false
+        }
+        else if (  etEndPlaceBrokerVehicle.text.toString().isNullOrEmpty()) {
+            Toast.makeText(requireContext(), "Enter unloading point", Toast.LENGTH_SHORT).show()
             return false
         }
         return true

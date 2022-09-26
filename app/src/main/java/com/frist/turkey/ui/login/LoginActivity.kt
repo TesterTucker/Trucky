@@ -11,6 +11,7 @@ import com.frist.turkey.R
 import com.frist.turkey.base.BaseActivity
 import com.frist.turkey.ui.Signup.SignupActivity
 import com.frist.turkey.ui.home.HomeActivity
+import com.frist.turkey.utils.SharedPreferenceUtility
 import com.frist.turkey.utils.showToast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -32,7 +33,7 @@ class LoginActivity : BaseActivity(), View.OnClickListener {
 
    override fun initViews() {
         mAuth = FirebaseAuth.getInstance();
-
+      // SharedPreferenceUtility.getInstance(this).isLoggedIn = true
         dont_have_account.setOnClickListener(this)
 
 

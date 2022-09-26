@@ -21,6 +21,20 @@ class VehicleActivity :BaseActivity(), View.OnClickListener {
     }
 
     override fun initViews() {
+
+        intent.getStringExtra("Owner Vehicle")
+        intent.getStringExtra("Market Vehicle")
+        intent.getStringExtra("Broker Vehicle")
+
+        if ( "Owner Vehicle".equals( intent.getStringExtra("Owner Vehicle"))){
+            constraintOwnVehicleBackground()
+        }
+        else if ( "Market Vehicle".equals( intent.getStringExtra("Market Vehicle"))){
+            constraintMarketVehicleBackground()
+        }
+        else if ( "Broker Vehicle".equals( intent.getStringExtra("Broker Vehicle"))){
+            constraintBrokerBackground()
+        }
         constraintOwnVehicleBackground()
         showFragment(OwnVehicleFragment())
     }
@@ -51,6 +65,15 @@ class VehicleActivity :BaseActivity(), View.OnClickListener {
     private fun constraintBrokerBackground() {
         tvHeadingVehicle.text="Broker Vehicle"
         showFragment(BrokerVehicleFragment())
+        constraintOwnVehicle.setBackgroundResource(R.color.white)
+        constraintMarketVehicle.setBackgroundResource(R.color.white)
+       constraintBroker.setBackgroundResource(R.drawable.bg_save)
+        tvBroker_SubHeading.setTextColor(Color.parseColor("#FFFFFF"))
+        tvBroker.setTextColor(Color.parseColor("#FFFFFF"))
+        tvOwnVehicle.setTextColor(Color.parseColor("#858585"))
+        tvMarket_Vehicle.setTextColor(Color.parseColor("#858585"))
+        tvOwnVehicleSubHeading.setTextColor(Color.parseColor("#858585"))
+        tvMarket_Vehicle_SubHeading.setTextColor(Color.parseColor("#858585"))
 
     }
 
@@ -66,6 +89,7 @@ class VehicleActivity :BaseActivity(), View.OnClickListener {
         constraintBroker.setBackgroundResource(R.color.white)
         tvBroker.setTextColor(Color.parseColor("#858585"))
         tvBroker_SubHeading.setTextColor(Color.parseColor("#858585"))
+        constraintBroker.setBackgroundResource(R.color.white)
         showFragment(MarketVehicleFragment())
     }
 
@@ -77,6 +101,10 @@ class VehicleActivity :BaseActivity(), View.OnClickListener {
         constraintMarketVehicle.setBackgroundResource(R.color.white)
         tvMarket_Vehicle.setTextColor(Color.parseColor("#858585"))
         tvMarket_Vehicle_SubHeading.setTextColor(Color.parseColor("#858585"))
+        tvBroker.setTextColor(Color.parseColor("#858585"))
+        tvBroker_SubHeading.setTextColor(Color.parseColor("#858585"))
+
+        constraintBroker.setBackgroundResource(R.color.white)
         showFragment(OwnVehicleFragment())
     }
 

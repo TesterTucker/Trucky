@@ -35,7 +35,9 @@ private constructor(context: Context) {
     var currentUser: String
         get() = sharedPreferences["currentUser"]!!
         set(value) = sharedPreferences.set("currentUser", value)
-
+    var isLoggedIn: Boolean
+        get() = sharedPreferences["isLoggedIn", false]!!
+        set(value) = sharedPreferences.set("isLoggedIn", value)
 
 
 

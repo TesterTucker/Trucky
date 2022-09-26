@@ -1409,7 +1409,67 @@
                 android:singleLine="true"
                 android:textSize="15sp" />
         </androidx.cardview.widget.CardView>
+        <TextView
+            android:id="@+id/Place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="#0F006A"
+            android:layout_marginTop="18dp"
+            app:layout_constraintStart_toStartOf="@+id/tvDeduction"
+            app:layout_constraintTop_toBottomOf="@+id/cardOtherExpenses"
+            android:text="Place"/>
 
+        <TextView
+            android:id="@+id/tvStart_Place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:text="Start Place"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Place"/>
+
+        <TextView
+            android:id="@+id/tvEndPlace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="End Place"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintTop_toTopOf="@+id/tvStart_Place"
+            app:layout_constraintBottom_toBottomOf="@+id/tvStart_Place"
+            app:layout_constraintStart_toStartOf="@id/guideline6"
+            />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardStartPlace"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="10dp"
+            android:forceHasOverlappingRendering="true"
+            app:cardCornerRadius="10dp"
+            app:cardPreventCornerOverlap="true"
+            app:layout_constraintEnd_toStartOf="@+id/guideline6"
+            app:layout_constraintStart_toStartOf="@+id/date"
+            app:layout_constraintTop_toBottomOf="@+id/tvStart_Place">
+
+            <EditText
+                android:id="@+id/etStartPlace"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="Start place"
+                android:paddingVertical="10dp"
+                android:paddingStart="10dp"
+                android:singleLine="true"
+                android:textSize="15sp" />
+        </androidx.cardview.widget.CardView>
         <TextView
             android:id="@+id/tvRemark"
             android:layout_width="wrap_content"
@@ -1419,7 +1479,25 @@
             android:textColor="@color/black"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="@+id/cardDieselRate"
-            app:layout_constraintTop_toBottomOf="@+id/cardOtherExpenses" />
+            app:layout_constraintTop_toBottomOf="@+id/cardStartPlace" />
+        <TextView
+            android:id="@+id/btn_saveMarketVehicle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/cardRemark"
+            android:text="Save"
+            android:background="@drawable/bg_save"
+            android:textColor="@color/white"
+            android:textSize="10dp"
+            android:layout_marginEnd="30dp"
+            android:paddingVertical="8dp"
+            android:paddingHorizontal="25sp"
+            android:layout_marginTop="80dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="80dp"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardRemark"
@@ -1445,22 +1523,33 @@
                 android:textSize="12sp"
                 android:hint="Remark"/>
         </androidx.cardview.widget.CardView>
-        <TextView
-            android:id="@+id/btn_saveMarketVehicle"
-            android:layout_width="wrap_content"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardEndPlace"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/cardRemark"
-            android:text="Save"
-            android:background="@drawable/bg_save"
-            android:textColor="@color/white"
-            android:textSize="10dp"
-            android:layout_marginEnd="30dp"
-            android:paddingVertical="8dp"
-            android:paddingHorizontal="25sp"
-            android:layout_marginTop="80dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="80dp"
-            app:layout_constraintEnd_toEndOf="parent"/>
+
+            android:layout_marginEnd="10dp"
+            android:forceHasOverlappingRendering="true"
+            app:cardCornerRadius="10dp"
+            app:cardPreventCornerOverlap="true"
+            app:layout_constraintTop_toTopOf="@+id/cardStartPlace"
+            app:layout_constraintBottom_toBottomOf="@+id/cardStartPlace"
+            app:layout_constraintStart_toStartOf="@id/GrNo"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginHorizontal="10dp">
+
+            <EditText
+                android:id="@+id/etEndPlace"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="End Place"
+                android:paddingVertical="10dp"
+                android:paddingStart="10dp"
+                android:singleLine="true"
+                android:textSize="15sp" />
+        </androidx.cardview.widget.CardView>
+
 
         <TextView
             android:id="@+id/tvPerLiter"

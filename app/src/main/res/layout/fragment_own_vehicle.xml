@@ -1,14 +1,1022 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.Vehicle.fragment.OwnVehicleFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Own Vehicle" />
+        tools:context=".ui.Vehicle.fragment.BrokerVehicleFragment">
 
-</FrameLayout>
+
+        <TextView
+            android:id="@+id/dateBrokerVehicle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="30dp"
+            android:text="Date"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/BrokerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="Gr No"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintTop_toTopOf="@+id/dateBrokerVehicle"
+            app:layout_constraintBottom_toBottomOf="@+id/dateBrokerVehicle"
+            app:layout_constraintStart_toStartOf="@id/guideline7"
+            />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardBrokerName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginEnd="10dp"
+            android:forceHasOverlappingRendering="true"
+            app:cardCornerRadius="10dp"
+            app:cardPreventCornerOverlap="true"
+            app:layout_constraintBottom_toBottomOf="@+id/cardDateBroker"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/BrokerName"
+            app:layout_constraintTop_toTopOf="@+id/cardDateBroker">
+
+            <EditText
+                android:id="@+id/etGrNo_Owner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="Broker Name"
+                android:paddingVertical="10dp"
+                android:paddingStart="10dp"
+                android:singleLine="true"
+                android:textSize="15sp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardDateBroker"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="10dp"
+            android:forceHasOverlappingRendering="true"
+            app:cardCornerRadius="10dp"
+            app:cardPreventCornerOverlap="true"
+            app:layout_constraintEnd_toStartOf="@+id/guideline7"
+            app:layout_constraintStart_toStartOf="@+id/dateBrokerVehicle"
+            app:layout_constraintTop_toBottomOf="@+id/dateBrokerVehicle">
+
+            <TextView
+                android:id="@+id/etDate_Owner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="Date"
+                android:paddingVertical="10dp"
+                android:paddingStart="10dp"
+                android:singleLine="true"
+                android:textSize="15sp" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/EBillNo_BrokerVehicle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:text="E Way Bill No"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardDateBroker"/>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardEBillNoBrokerVehicle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="10dp"
+            android:forceHasOverlappingRendering="true"
+            app:cardCornerRadius="10dp"
+            app:cardPreventCornerOverlap="true"
+            app:layout_constraintEnd_toStartOf="@+id/guideline7"
+            app:layout_constraintStart_toStartOf="@+id/EBillNo_BrokerVehicle"
+            app:layout_constraintTop_toBottomOf="@+id/EBillNo_BrokerVehicle">
+
+            <EditText
+                android:id="@+id/etEBillNo_Owner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="E Bill No"
+                android:paddingVertical="10dp"
+                android:paddingStart="10dp"
+                android:singleLine="true"
+                android:textSize="15sp" />
+        </androidx.cardview.widget.CardView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/ownerDetail_BrokerVehicle"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/cardEBillNoBrokerVehicle"
+            android:text="Owner Details"
+            android:textColor="#0F006A"
+            android:textSize="15sp"
+            android:layout_marginTop="22dp"
+            app:layout_constraintStart_toStartOf="@id/dateBrokerVehicle"/>
+
+        <TextView
+            android:id="@+id/tvVehicleOwner_BrokerVehicle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:text="Vehicle Owner"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ownerDetail_BrokerVehicle"/>
+        <TextView
+            android:id="@+id/Mobile_Number_Broker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="Mobile Number"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintTop_toTopOf="@+id/tvVehicleOwner_BrokerVehicle"
+            app:layout_constraintBottom_toBottomOf="@+id/tvVehicleOwner_BrokerVehicle"
+            app:layout_constraintStart_toStartOf="@id/guideline7"
+            />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardVehicleOwner_Broker"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="10dp"
+            android:forceHasOverlappingRendering="true"
+            app:cardCornerRadius="10dp"
+            app:cardPreventCornerOverlap="true"
+            app:layout_constraintEnd_toStartOf="@+id/guideline7"
+            app:layout_constraintStart_toStartOf="@+id/dateBrokerVehicle"
+            app:layout_constraintTop_toBottomOf="@+id/tvVehicleOwner_BrokerVehicle">
+
+            <EditText
+                android:id="@+id/etVehicleOwner_Owner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint=" Owner Name"
+                android:paddingVertical="10dp"
+                android:paddingStart="10dp"
+                android:singleLine="true"
+                android:textSize="15sp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardMobileNumber_Broker"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginEnd="10dp"
+            android:forceHasOverlappingRendering="true"
+            app:cardCornerRadius="10dp"
+            app:cardPreventCornerOverlap="true"
+            app:layout_constraintBottom_toBottomOf="@+id/cardVehicleOwner_Broker"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/Mobile_Number_Broker"
+            app:layout_constraintTop_toTopOf="@+id/cardVehicleOwner_Broker">
+
+            <EditText
+                android:id="@+id/etMobileNumber_Owner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="Mobile Number"
+                android:paddingVertical="10dp"
+                android:paddingStart="10dp"
+                android:singleLine="true"
+                android:inputType="number"
+                android:textSize="15sp" />
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/tvAccountNo_Broker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:text="Account Number"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardVehicleOwner_Broker"/>
+
+        <TextView
+            android:id="@+id/IfscNumber_Broker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="IFSC Number"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintTop_toTopOf="@+id/tvAccountNo_Broker"
+            app:layout_constraintBottom_toBottomOf="@+id/tvAccountNo_Broker"
+            app:layout_constraintStart_toStartOf="@id/guideline7"
+            />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardAccountNo_Broker"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="10dp"
+            android:forceHasOverlappingRendering="true"
+            app:cardCornerRadius="10dp"
+            app:cardPreventCornerOverlap="true"
+            app:layout_constraintEnd_toStartOf="@+id/guideline7"
+            app:layout_constraintStart_toStartOf="@+id/dateBrokerVehicle"
+            app:layout_constraintTop_toBottomOf="@+id/tvAccountNo_Broker">
+
+            <EditText
+                android:id="@+id/etAccountNo_Owner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="Account Number"
+                android:paddingVertical="10dp"
+                android:paddingStart="10dp"
+                android:singleLine="true"
+                android:textSize="15sp" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/TruckDetails_BrokerVehicle"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/cardAccountNo_Broker"
+            android:text="Truck Details"
+            android:textColor="#0F006A"
+            android:textSize="15sp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintStart_toStartOf="@id/dateBrokerVehicle"/>
+        <TextView
+            android:id="@+id/tvTruckNumberBroker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:text="Truck Number"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TruckDetails_BrokerVehicle"/>
+
+        <TextView
+            android:id="@+id/ChaiseNumber_BrokerVehicle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="Chasie Number"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintTop_toTopOf="@+id/tvTruckNumberBroker"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTruckNumberBroker"
+            app:layout_constraintStart_toStartOf="@id/guideline7"
+            />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardChaiseNo_BrokerVehicle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginEnd="10dp"
+            android:forceHasOverlappingRendering="true"
+            app:cardCornerRadius="10dp"
+            app:cardPreventCornerOverlap="true"
+            app:layout_constraintBottom_toBottomOf="@+id/cardTruckNumber_BrokerVehicle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/ChaiseNumber_BrokerVehicle"
+            app:layout_constraintTop_toTopOf="@+id/cardTruckNumber_BrokerVehicle">
+
+            <EditText
+                android:id="@+id/etChaise_Number_Owner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="Chasie Number"
+                android:paddingVertical="10dp"
+                android:paddingStart="10dp"
+
+                android:singleLine="true"
+                android:textSize="15sp" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardTruckNumber_BrokerVehicle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="10dp"
+            android:forceHasOverlappingRendering="true"
+            app:cardCornerRadius="10dp"
+            app:cardPreventCornerOverlap="true"
+            app:layout_constraintEnd_toStartOf="@+id/guideline7"
+            app:layout_constraintStart_toStartOf="@+id/dateBrokerVehicle"
+            app:layout_constraintTop_toBottomOf="@+id/tvTruckNumberBroker">
+
+            <EditText
+                android:id="@+id/etTruckNumber_Owner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="Truck Number"
+                android:paddingVertical="10dp"
+                android:paddingStart="10dp"
+                android:singleLine="true"
+                android:textSize="15sp" />
+        </androidx.cardview.widget.CardView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/DriverDetails_BrokerVehicle"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/cardTruckNumber_BrokerVehicle"
+            android:text="Driver Details"
+            android:textColor="#0F006A"
+            android:textSize="15sp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintStart_toStartOf="@id/dateBrokerVehicle"/>
+
+        <TextView
+            android:id="@+id/tvDriverNameBrokerVehicle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:text="Driver Name"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/DriverDetails_BrokerVehicle"/>
+
+
+        <TextView
+            android:id="@+id/DriverNumberBrokerVehicle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="Driver Number"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintTop_toTopOf="@+id/tvDriverNameBrokerVehicle"
+            app:layout_constraintBottom_toBottomOf="@+id/tvDriverNameBrokerVehicle"
+            app:layout_constraintStart_toStartOf="@id/guideline7"
+            />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardDriverNo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginEnd="10dp"
+            android:forceHasOverlappingRendering="true"
+            app:cardCornerRadius="10dp"
+            app:cardPreventCornerOverlap="true"
+            app:layout_constraintBottom_toBottomOf="@+id/cardDriverNameBrokerVehicle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/DriverNumberBrokerVehicle"
+            app:layout_constraintTop_toTopOf="@+id/cardDriverNameBrokerVehicle">
+
+            <EditText
+                android:id="@+id/etDriverNo_Owner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="Driver Number"
+                android:paddingVertical="10dp"
+                android:paddingStart="10dp"
+
+                android:singleLine="true"
+                android:inputType="number"
+                android:textSize="15sp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardDriverNameBrokerVehicle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="10dp"
+            android:forceHasOverlappingRendering="true"
+            app:cardCornerRadius="10dp"
+            app:cardPreventCornerOverlap="true"
+            app:layout_constraintEnd_toStartOf="@+id/guideline7"
+            app:layout_constraintStart_toStartOf="@+id/dateBrokerVehicle"
+            app:layout_constraintTop_toBottomOf="@+id/tvDriverNameBrokerVehicle">
+
+            <EditText
+                android:id="@+id/etDriverName_Owner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="Driver Name"
+                android:paddingVertical="10dp"
+                android:paddingStart="10dp"
+                android:singleLine="true"
+                android:textSize="15sp" />
+        </androidx.cardview.widget.CardView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/ConsignorDetailsBrokerVehicle"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/cardDriverNameBrokerVehicle"
+            android:text="Consignor Details"
+            android:textColor="#0F006A"
+            android:textSize="15sp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintStart_toStartOf="@id/dateBrokerVehicle"/>
+
+        <TextView
+            android:id="@+id/tvConsignorNameBrokerVehicle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:text="Consignor Name"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ConsignorDetailsBrokerVehicle"/>
+
+
+        <TextView
+            android:id="@+id/tvConsignorNumberBrokerVehicle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="Consignor Number"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintTop_toTopOf="@+id/tvConsignorNameBrokerVehicle"
+            app:layout_constraintBottom_toBottomOf="@+id/tvConsignorNameBrokerVehicle"
+            app:layout_constraintStart_toStartOf="@id/guideline7"
+            />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardConsignorNoBrokerVehicle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:forceHasOverlappingRendering="true"
+            app:cardCornerRadius="10dp"
+            app:cardPreventCornerOverlap="true"
+            app:layout_constraintTop_toTopOf="@+id/cardConsignorNameBrokerVehicle"
+            app:layout_constraintBottom_toBottomOf="@+id/cardConsignorNameBrokerVehicle"
+            app:layout_constraintStart_toStartOf="@id/BrokerName"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginHorizontal="10dp">
+
+            <EditText
+                android:id="@+id/etConsignorNo_Owner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="Consignor No"
+                android:paddingVertical="10dp"
+                android:paddingStart="10dp"
+                android:inputType="number"
+                android:singleLine="true"
+                android:textSize="15sp" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardConsignorNameBrokerVehicle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="10dp"
+            android:forceHasOverlappingRendering="true"
+            app:cardCornerRadius="10dp"
+            app:cardPreventCornerOverlap="true"
+            app:layout_constraintEnd_toStartOf="@+id/guideline7"
+            app:layout_constraintStart_toStartOf="@+id/dateBrokerVehicle"
+            app:layout_constraintTop_toBottomOf="@+id/tvConsignorNameBrokerVehicle">
+
+            <EditText
+                android:id="@+id/etConsignorName_Owner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="Consignor Name"
+                android:paddingVertical="10dp"
+                android:paddingStart="10dp"
+                android:singleLine="true"
+                android:textSize="15sp" />
+        </androidx.cardview.widget.CardView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/ProductDetailsBrokerVehicle"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/cardConsignorNameBrokerVehicle"
+            android:text="Product Details"
+            android:textColor="#0F006A"
+            android:textSize="15sp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintStart_toStartOf="@id/dateBrokerVehicle"/>
+        <TextView
+            android:id="@+id/tvProductName_BrokerVehicle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:text="Product Name"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ProductDetailsBrokerVehicle"/>
+
+        <TextView
+            android:id="@+id/tvFixedPerToneBrokerVehicle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="Fixed Per Tone"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintTop_toTopOf="@+id/tvProductName_BrokerVehicle"
+            app:layout_constraintBottom_toBottomOf="@+id/tvProductName_BrokerVehicle"
+            app:layout_constraintStart_toStartOf="@id/guideline7"
+            />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardFixedPerToneBrokervehicle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:forceHasOverlappingRendering="true"
+            app:cardCornerRadius="10dp"
+            app:cardPreventCornerOverlap="true"
+            app:layout_constraintTop_toTopOf="@+id/cardProductNameBrokerVehicle"
+            app:layout_constraintBottom_toBottomOf="@+id/cardProductNameBrokerVehicle"
+            app:layout_constraintStart_toStartOf="@id/tvFixedPerToneBrokerVehicle"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginHorizontal="10dp">
+
+            <EditText
+                android:id="@+id/etfixedPerTonee_Owner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="Weight per tone"
+                android:paddingVertical="10dp"
+                android:paddingStart="10dp"
+                android:inputType="number"
+                android:singleLine="true"
+                android:textSize="15sp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardProductNameBrokerVehicle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="10dp"
+            android:forceHasOverlappingRendering="true"
+            app:cardCornerRadius="10dp"
+            app:cardPreventCornerOverlap="true"
+            app:layout_constraintEnd_toStartOf="@+id/guideline7"
+            app:layout_constraintStart_toStartOf="@+id/dateBrokerVehicle"
+            app:layout_constraintTop_toBottomOf="@+id/tvProductName_BrokerVehicle">
+
+            <EditText
+                android:id="@+id/etProductName_Owner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="Product Name"
+                android:paddingVertical="10dp"
+                android:paddingStart="10dp"
+                android:singleLine="true"
+                android:textSize="15sp" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/AmountBroker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="#0F006A"
+            android:layout_marginTop="18dp"
+            app:layout_constraintStart_toStartOf="@+id/tvConsignorNameBrokerVehicle"
+            app:layout_constraintTop_toBottomOf="@+id/cardProductNameBrokerVehicle"
+            android:text="Amount"/>
+
+        <TextView
+            android:id="@+id/weight_BrokerVehicle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:text="Weight"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/AmountBroker" />
+
+        <TextView
+            android:id="@+id/tvRate_BrokerVehicle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="Rate"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintTop_toTopOf="@+id/weight_BrokerVehicle"
+            app:layout_constraintBottom_toBottomOf="@+id/weight_BrokerVehicle"
+            app:layout_constraintStart_toStartOf="@id/guideline7"
+            />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardRateWeightBrokerVehicle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="10dp"
+            android:forceHasOverlappingRendering="true"
+            app:cardCornerRadius="10dp"
+            app:cardPreventCornerOverlap="true"
+            app:layout_constraintEnd_toStartOf="@+id/guideline7"
+            app:layout_constraintStart_toStartOf="@+id/dateBrokerVehicle"
+            app:layout_constraintTop_toBottomOf="@+id/weight_BrokerVehicle">
+
+            <EditText
+                android:id="@+id/etRateWeight_Owner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="Weight"
+                android:inputType="number"
+                android:paddingVertical="10dp"
+                android:paddingStart="10dp"
+                android:singleLine="true"
+                android:textSize="15sp" />
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardToatal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:forceHasOverlappingRendering="true"
+            app:cardCornerRadius="10dp"
+            app:cardPreventCornerOverlap="true"
+            app:layout_constraintTop_toTopOf="@+id/cardRateWeightBrokerVehicle"
+            app:layout_constraintBottom_toBottomOf="@+id/cardRateWeightBrokerVehicle"
+            app:layout_constraintStart_toStartOf="@id/IfscNumber_Broker"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginHorizontal="10dp">
+
+            <EditText
+                android:id="@+id/etTotal_Owner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="Rate"
+                android:paddingVertical="10dp"
+                android:paddingStart="10dp"
+                android:inputType="number"
+                android:singleLine="true"
+                android:textSize="15sp" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tvGst_BrokerVehicle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Gst"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/weight_BrokerVehicle"
+            app:layout_constraintTop_toBottomOf="@+id/cardRateWeightBrokerVehicle" />
+
+        <TextView
+            android:id="@+id/tvtotal_BrokerVehicle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="Total"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintTop_toTopOf="@+id/tvGst_BrokerVehicle"
+            app:layout_constraintBottom_toBottomOf="@+id/tvGst_BrokerVehicle"
+            app:layout_constraintStart_toStartOf="@id/guideline7"
+            />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardGstBrokerVehicle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="10dp"
+            android:forceHasOverlappingRendering="true"
+            app:cardCornerRadius="10dp"
+            app:cardPreventCornerOverlap="true"
+            app:layout_constraintEnd_toStartOf="@+id/guideline7"
+            app:layout_constraintStart_toStartOf="@+id/dateBrokerVehicle"
+            app:layout_constraintTop_toBottomOf="@+id/tvGst_BrokerVehicle">
+
+            <EditText
+                android:id="@+id/etGst_Owner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="Gst"
+                android:paddingVertical="10dp"
+                android:paddingStart="10dp"
+                android:singleLine="true"
+                android:textSize="15sp" />
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/PaymentDetails_BrokerVehicle"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/cardGstBrokerVehicle"
+            android:text="Payment Details"
+            android:textColor="#0F006A"
+            android:textSize="15sp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintStart_toStartOf="@id/cardGstBrokerVehicle"/>
+        <TextView
+            android:id="@+id/PaidBy_BrokerVehicle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Paid by"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/PaymentDetails_BrokerVehicle"
+            app:layout_constraintTop_toBottomOf="@+id/PaymentDetails_BrokerVehicle" />
+
+
+
+        <TextView
+            android:id="@+id/tvPhoneNumberPaidBy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="Phone Number"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintTop_toTopOf="@+id/PaidBy_BrokerVehicle"
+            app:layout_constraintBottom_toBottomOf="@+id/PaidBy_BrokerVehicle"
+            app:layout_constraintStart_toStartOf="@id/guideline7"
+            />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardPaidByBrokerVehicle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="10dp"
+            android:forceHasOverlappingRendering="true"
+            app:cardCornerRadius="10dp"
+            app:cardPreventCornerOverlap="true"
+            app:layout_constraintEnd_toStartOf="@+id/guideline7"
+            app:layout_constraintStart_toStartOf="@+id/dateBrokerVehicle"
+            app:layout_constraintTop_toBottomOf="@+id/PaidBy_BrokerVehicle">
+
+            <EditText
+                android:id="@+id/etPaidBy_Owner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="Paid by"
+                android:paddingVertical="10dp"
+                android:paddingStart="10dp"
+                android:singleLine="true"
+                android:textSize="15sp" />
+        </androidx.cardview.widget.CardView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/Place_OwnVehicle"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/cardPaidByBrokerVehicle"
+            android:text="Place"
+            android:textColor="#0F006A"
+            android:textSize="15sp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintStart_toStartOf="@id/dateBrokerVehicle"/>
+
+
+        <TextView
+            android:id="@+id/tvLoadingPlaceOwnVehicle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:text="Loading Point"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Place_OwnVehicle"/>
+
+        <TextView
+            android:id="@+id/tvUnloadingPlaceOwnerVehicle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="Unloading Place"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintTop_toTopOf="@+id/tvLoadingPlaceOwnVehicle"
+            app:layout_constraintBottom_toBottomOf="@+id/tvLoadingPlaceOwnVehicle"
+            app:layout_constraintStart_toStartOf="@id/guideline7"
+            />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardLoadingPlaceOwnVehicle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="10dp"
+            android:forceHasOverlappingRendering="true"
+            app:cardCornerRadius="10dp"
+            app:cardPreventCornerOverlap="true"
+            app:layout_constraintEnd_toStartOf="@+id/guideline7"
+            app:layout_constraintStart_toStartOf="@+id/dateBrokerVehicle"
+            app:layout_constraintTop_toBottomOf="@+id/tvLoadingPlaceOwnVehicle">
+
+            <EditText
+                android:id="@+id/etstartPlace_OwnerVehicle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="loading place"
+                android:paddingVertical="10dp"
+                android:paddingStart="10dp"
+                android:singleLine="true"
+                android:textSize="15sp" />
+        </androidx.cardview.widget.CardView>
+        <TextView
+            android:id="@+id/btn_saveBrokerVehicle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/cardLoadingPlaceOwnVehicle"
+            android:text="Save"
+            android:background="@drawable/bg_save"
+            android:textColor="@color/white"
+            android:textSize="10dp"
+            android:layout_marginEnd="30dp"
+            android:paddingVertical="8dp"
+            android:paddingHorizontal="25sp"
+            android:layout_marginTop="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="80dp"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardEndPlaceOwnerPlace"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginEnd="10dp"
+            android:forceHasOverlappingRendering="true"
+            app:cardCornerRadius="10dp"
+            app:cardPreventCornerOverlap="true"
+            android:layout_marginStart="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cardLoadingPlaceOwnVehicle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline7"
+            app:layout_constraintTop_toTopOf="@+id/cardLoadingPlaceOwnVehicle">
+
+            <EditText
+                android:id="@+id/etEndPlace_Owner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="Unloading Point"
+                android:paddingVertical="10dp"
+                android:paddingStart="10dp"
+                android:singleLine="true"
+                android:textSize="15sp" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardPhnNoPaidBy"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginEnd="10dp"
+            android:forceHasOverlappingRendering="true"
+            app:cardCornerRadius="10dp"
+            app:cardPreventCornerOverlap="true"
+            android:layout_marginStart="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cardPaidByBrokerVehicle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline7"
+            app:layout_constraintTop_toTopOf="@+id/cardPaidByBrokerVehicle">
+
+            <EditText
+                android:id="@+id/etPhoneNo_Paidby__Owner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="Phone Number"
+                android:paddingVertical="10dp"
+                android:paddingStart="10dp"
+                android:inputType="number"
+                android:singleLine="true"
+                android:textSize="15sp" />
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardToatal_BrokerVehicle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:forceHasOverlappingRendering="true"
+            app:cardCornerRadius="10dp"
+            app:cardPreventCornerOverlap="true"
+            app:layout_constraintTop_toTopOf="@+id/cardGstBrokerVehicle"
+            app:layout_constraintBottom_toBottomOf="@+id/cardGstBrokerVehicle"
+            app:layout_constraintStart_toStartOf="@id/IfscNumber_Broker"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginHorizontal="10dp">
+
+            <EditText
+                android:id="@+id/etTotal_OwnerDetail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="Total"
+                android:paddingVertical="10dp"
+                android:paddingStart="10dp"
+                android:inputType="number"
+                android:singleLine="true"
+                android:textSize="15sp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardIFSCNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginEnd="10dp"
+            android:forceHasOverlappingRendering="true"
+            app:cardCornerRadius="10dp"
+            app:cardPreventCornerOverlap="true"
+            app:layout_constraintBottom_toBottomOf="@+id/cardAccountNo_Broker"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/IfscNumber_Broker"
+            app:layout_constraintTop_toTopOf="@+id/cardAccountNo_Broker">
+
+            <EditText
+                android:id="@+id/etIfscNumber_Owner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="IFSC Number"
+                android:paddingVertical="10dp"
+                android:paddingStart="10dp"
+                android:singleLine="true"
+                android:textSize="15sp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_begin="203dp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

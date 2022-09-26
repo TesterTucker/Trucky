@@ -78,6 +78,7 @@ data class ClientDetail(
 ):Parcelable
 
 
+@Parcelize
 data class MarketVehicle(
         var vehicletype:String?=null,
         var date:String?=null,
@@ -117,8 +118,11 @@ data class MarketVehicle(
         var Remark:String?=null,
         var marketVehicleId: String? = null,
         var timeStamp: @RawValue Any? = null,
-)
+        var StartPlace:String?=null,
+        var EndPlace:String?=null,
+):Parcelable
 
+@Parcelize
 data class BrokerVehicle(
     var vehicletype:String?=null,
     var date:String?=null,
@@ -144,4 +148,88 @@ data class BrokerVehicle(
     var PaidByNumber:String?=null,
     var BrokerVehicleId: String? = null,
     var timeStamp: @RawValue Any? = null,
-)
+    var loadingPoint:String?=null,
+    var unloadingPoint:String?=null,
+):Parcelable
+
+@Parcelize
+data class OwnerVehicle(
+    var vehicletype:String?=null,
+    var date:String?=null,
+    var GrNo:String?=null,
+    var EBillNo:String?=null,
+    var VehicleOwner:String?=null,
+    var MobileNumber:String?=null,
+    var AccountNumber:String?=null,
+    var IfscNumber:String?=null,
+    var TruckNumber:String?=null,
+    var Chaise_Number:String?=null,
+    var DriverName:String?=null,
+    var DriverNo:String?=null,
+    var ConsignorName:String?=null,
+    var ConsignorNo:String?=null,
+    var ProductName:String?=null,
+    var fixedPerTonee:String?=null,
+    var RateWeight:String?=null,
+    var ActualRate:String?=null,
+    var RateGst:String?=null,
+    var Total:String?=null,
+    var PaidBy:String?=null,
+    var PaidByNumber:String?=null,
+    var OwnerVehicleId: String? = null,
+    var timeStamp: @RawValue Any? = null,
+    var loadingPoint:String?=null,
+    var unloadingPoint:String?=null,
+):Parcelable
+
+@Parcelize
+data class CommonVehicle(
+    var vehicletype:String?=null,
+    var date:String?=null,
+    var GrNo:String?=null,
+    var EBillNo:String?=null,
+    var VehicleOwner:String?=null,
+    var MobileNumber:String?=null,
+    var AccountNumber:String?=null,
+    var IfscNumber:String?=null,
+    var TruckNumber:String?=null,
+    var Chaise_Number:String?=null,
+    var DriverName:String?=null,
+    var DriverNo:String?=null,
+    var ConsignorName:String?=null,
+    var ConsignorNo:String?=null,
+    var ProductName:String?=null,
+    var fixedPerTonee:String?=null,
+    var RateWeight:String?=null,
+    var ActualRate:String?=null,
+    var RateGst:String?=null,
+    var Total:String?=null,
+    var PaidBy:String?=null,
+    var PaidByNumber:String?=null,
+    var OwnerVehicleId: String? = null,
+    var timeStamp: @RawValue Any? = null,
+    var loadingPoint:String?=null,
+    var unloadingPoint:String?=null,
+    var BrokerName:String?=null,
+    var BrokerVehicleId: String? = null,
+    var RateGiven:String?=null,
+    var Total_rateGiven:String?=null,
+    var Gst_RateGiven:String?=null,
+    var Commission_Charge:String?=null,
+    var GuideCharge:String?=null,
+    var Advance_Amount:String?=null,
+    var Advance_Amount_paid:String?=null,
+    var AdvancePercentageDeduction:String?=null,
+    var toatal_Advance_Amount_Paid:String?=null,
+    var NooftimesDieselPaid:String?=null,
+    var PumpName:String?=null,
+    var DieselRate:String?=null,
+    var PerLiter:String?=null,
+    var DieselAmount:String?=null,
+    var OtherExpenses:String?=null,
+    var Remark:String?=null,
+    var marketVehicleId: String? = null,
+    var StartPlace:String?=null,
+    var EndPlace:String?=null
+
+):Parcelable

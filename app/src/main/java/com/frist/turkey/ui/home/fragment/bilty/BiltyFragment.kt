@@ -14,6 +14,7 @@ import android.view.ViewGroup
 import android.view.Window
 import com.frist.turkey.R
 import com.frist.turkey.base.BaseFragment
+import com.frist.turkey.utils.shareDoucments
 import kotlinx.android.synthetic.main.dialog_share_builty.*
 import kotlinx.android.synthetic.main.dialog_share_builty.view.*
 import kotlinx.android.synthetic.main.fragment_bilty.*
@@ -73,11 +74,7 @@ class BiltyFragment : BaseFragment() {
     }
 
     private fun shareBuilty() {
-        val shareIntent = Intent()
-        shareIntent.action = Intent.ACTION_SEND
-        shareIntent.type="text/plain"
-        shareIntent.putExtra(Intent.EXTRA_TEXT, "This is youe bill.");
-        startActivity(Intent.createChooser(shareIntent,"whatsapp"))
+        shareDoucments()
     }
 
 

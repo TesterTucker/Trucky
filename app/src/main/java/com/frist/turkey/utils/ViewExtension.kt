@@ -10,11 +10,18 @@ import android.view.View
 import android.view.WindowManager
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat.startActivity
 import androidx.fragment.app.Fragment
 import com.frist.turkey.R
 
 
-
+fun Fragment.shareDoucments(){
+    val shareIntent = Intent()
+    shareIntent.action = Intent.ACTION_SEND
+    shareIntent.type="text/plain"
+    shareIntent.putExtra(Intent.EXTRA_TEXT, "This is youe bill.");
+    startActivity(Intent.createChooser(shareIntent,"whatsapp"))
+}
 
 fun Fragment.statusBarTransparent() {
     if (Build.VERSION.SDK_INT in 19..20) {

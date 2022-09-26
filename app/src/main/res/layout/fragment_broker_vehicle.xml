@@ -817,8 +817,111 @@
                 android:textSize="15sp" />
         </androidx.cardview.widget.CardView>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/Place_BrokerVehicle"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/cardPaidByBrokerVehicle"
+            android:text="Place"
+            android:textColor="#0F006A"
+            android:textSize="15sp"
+            android:layout_marginTop="30dp"
+            app:layout_constraintStart_toStartOf="@id/cardGstBrokerVehicle"/>
 
 
+        <TextView
+            android:id="@+id/startPlace_BrokerVehicle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Loading Point"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/PaymentDetails_BrokerVehicle"
+            app:layout_constraintTop_toBottomOf="@+id/Place_BrokerVehicle" />
+        <TextView
+            android:id="@+id/tvendPlaceBroker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="Unloading Point"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintTop_toTopOf="@+id/startPlace_BrokerVehicle"
+            app:layout_constraintBottom_toBottomOf="@+id/startPlace_BrokerVehicle"
+            app:layout_constraintStart_toStartOf="@id/guideline7"
+            />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardstartPointBrokerVehicle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="10dp"
+            android:forceHasOverlappingRendering="true"
+            app:cardCornerRadius="10dp"
+            app:cardPreventCornerOverlap="true"
+            app:layout_constraintEnd_toStartOf="@+id/guideline7"
+            app:layout_constraintStart_toStartOf="@+id/dateBrokerVehicle"
+            app:layout_constraintTop_toBottomOf="@+id/startPlace_BrokerVehicle">
+
+            <EditText
+                android:id="@+id/etStartPoint_BrokerVehicle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="Loading Point"
+                android:paddingVertical="10dp"
+                android:paddingStart="10dp"
+                android:singleLine="true"
+                android:textSize="15sp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardEndPlaceBroker"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginEnd="10dp"
+            android:forceHasOverlappingRendering="true"
+            app:cardCornerRadius="10dp"
+            app:cardPreventCornerOverlap="true"
+            android:layout_marginStart="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cardstartPointBrokerVehicle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline7"
+            app:layout_constraintTop_toTopOf="@+id/cardstartPointBrokerVehicle">
+
+            <EditText
+                android:id="@+id/etEndPlaceBrokerVehicle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="Unloading Point"
+                android:paddingVertical="10dp"
+                android:paddingStart="10dp"
+                android:singleLine="true"
+                android:textSize="15sp" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/btn_saveBrokerVehicle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/cardEndPlaceBroker"
+            android:text="Save"
+            android:background="@drawable/bg_save"
+            android:textColor="@color/white"
+            android:textSize="10dp"
+            android:layout_marginEnd="30dp"
+            android:paddingVertical="8dp"
+            android:paddingHorizontal="25sp"
+            android:layout_marginTop="40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="80dp"
+            app:layout_constraintEnd_toEndOf="parent"/>
         <androidx.cardview.widget.CardView
             android:id="@+id/cardPhnNoPaidBy"
             android:layout_width="0dp"
@@ -847,22 +950,7 @@
                 android:singleLine="true"
                 android:textSize="15sp" />
         </androidx.cardview.widget.CardView>
-        <TextView
-            android:id="@+id/btn_saveBrokerVehicle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@+id/cardPhnNoPaidBy"
-            android:text="Save"
-            android:background="@drawable/bg_save"
-            android:textColor="@color/white"
-            android:textSize="10dp"
-            android:layout_marginEnd="30dp"
-            android:paddingVertical="8dp"
-            android:paddingHorizontal="25sp"
-            android:layout_marginTop="40dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="80dp"
-            app:layout_constraintEnd_toEndOf="parent"/>
+
 
 
         <androidx.cardview.widget.CardView

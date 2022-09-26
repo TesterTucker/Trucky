@@ -22,6 +22,7 @@ import com.frist.turkey.ui.home.fragment.bilty.BiltyFragment
 
 import com.frist.turkey.ui.home.fragment.driver.SearchDriverDetailFragment
 import com.frist.turkey.ui.home.fragment.truckDetail.TruckDetailFragment
+import com.frist.turkey.utils.SharedPreferenceUtility
 import com.yarolegovich.slidingrootnav.SlidingRootNav
 import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder
 import kotlinx.android.synthetic.main.activity_home.*
@@ -35,7 +36,7 @@ class HomeActivity : AppCompatActivity(), DrawerAdapter.OnItemSelectedListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-
+  //      SharedPreferenceUtility.getInstance(this).isLoggedIn = true
         ivMenu.setOnClickListener {
             slidingRootNav?.openMenu()
         }
