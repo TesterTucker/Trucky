@@ -14,7 +14,6 @@
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/drawable/bg_save.xml" value="0.2115" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/drawable/bg_search.xml" value="0.17" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/drawable/bg_share.xml" value="0.2105" />
-        <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/drawable/bg_share_dialogue.xml" value="0.1815" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/drawable/bg_sharebuilty.xml" value="0.2105" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/drawable/bg_submit.xml" value="0.1875" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/drawable/bg_white.xml" value="0.1825" />
@@ -36,7 +35,6 @@
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/activity_splash.xml" value="0.17916666666666667" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/activity_vehicle.xml" value="0.22" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/content.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/dialog_market_vehicle.xml" value="0.25" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/dialog_share_builty.xml" value="0.203125" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/fragment_bilty.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/fragment_broker_vehicle.xml" value="0.33" />
@@ -45,7 +43,7 @@
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/fragment_driver.xml" value="0.33" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/fragment_main.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/fragment_market_vehicle.xml" value="0.25" />
-        <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/fragment_own_vehicle.xml" value="0.2986003110419907" />
+        <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/fragment_own_vehicle.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/fragment_search_driver_detail.xml" value="0.18" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/fragment_text.xml" value="0.153125" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/fragment_truck_detail.xml" value="0.22" />
@@ -55,13 +53,22 @@
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/item_client_detail.xml" value="0.203125" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/item_driver_detail.xml" value="0.203125" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/item_home_fragment.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/item_opertaion_detail.xml" value="0.25" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/item_option.xml" value="0.203125" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/menu.xml" value="0.203125" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/menu_left_drawer.xml" value="0.153125" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/sort_bottom_sheet_dialog.xml" value="0.22" />
         <entry key="..\:/Users/akars/AndroidStudioProjects/Turkey/app/src/main/res/layout/spinner_dropdown.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/akars/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_spinner_item.xml" value="0.20416666666666666" />
+        <entry key="app/src/main/res/drawable/bg_edit.xml" value="0.1645" />
+        <entry key="app/src/main/res/drawable/bg_gulty.xml" value="0.1645" />
+        <entry key="app/src/main/res/drawable/bg_home_page.xml" value="0.1645" />
+        <entry key="app/src/main/res/drawable/bg_inputtype.xml" value="0.1645" />
+        <entry key="app/src/main/res/drawable/bg_search.xml" value="0.1645" />
+        <entry key="app/src/main/res/layout/activity_diesel.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/fragment_diesel.xml" value="0.31323242187500017" />
+        <entry key="app/src/main/res/layout/home_fragment.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/item_diesel_list.xml" value="0.37120666503906263" />
       </map>
     </option>
   </component>

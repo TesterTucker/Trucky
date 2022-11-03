@@ -10,7 +10,9 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.frist.turkey.R
 import com.frist.turkey.ui.Operation.OperationActivity
+import com.frist.turkey.ui.diesel.DieselFragment
 import com.frist.turkey.ui.home.HomeActivity
+import com.frist.turkey.utils.AppUtils
 import com.yarolegovich.slidingrootnav.SlidingRootNav
 import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder
 import kotlinx.android.synthetic.main.activity_home.*
@@ -98,7 +100,9 @@ class HomeFragment : Fragment(), View.OnClickListener {
                 Toast.makeText(requireContext(), "card Maintenance", Toast.LENGTH_SHORT).show()
             }
             R.id.cardDesial->{
-                Toast.makeText(requireContext(), "card Desial", Toast.LENGTH_SHORT).show()
+                activity?.let {
+                    AppUtils.addFragment(it,DieselFragment.getInstance() , R.id.container)
+                }
             }
             R.id.cardLocation->{
                 Toast.makeText(requireContext(), "card Location", Toast.LENGTH_SHORT).show()
